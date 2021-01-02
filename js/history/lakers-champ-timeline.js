@@ -1,7 +1,7 @@
 // define margin and svg size
-var margin = { top: 150, bottom: 30, left: 50, right: 30 }
-var width = 1300
-var height = 300
+var margin = { top: 150, bottom: 200, left: 150, right: 220 }
+var width = 1250
+var height = 400
 
 // create svg
 var svg = d3
@@ -20,25 +20,42 @@ d3.csv('./files/lakers_champ.csv', data => {
   })
   years.sort()
 
+  allYears = []
+  for (var i = 1949; i <= 2019; i++) {
+    allYears.push(i)
+  }
+
   var x = d3
     .scaleLinear()
     .domain([
-      d3.min(data, d => d['YEARAWARDED']),
-      d3.max(data, d => d['YEARAWARDED'])
+      1948,
+      // d3.min(data, d => d['YEARAWARDED']),
+      // d3.max(data, d => d['YEARAWARDED'])
+      2011
     ])
     .range([0, width])
 
-  svg
+  var axis = svg
     .append('g')
     .attr('class', 'lakers-champ-axis')
     .attr('transform', 'translate(0,' + height * 0.3 + ')')
     .call(
       d3
         .axisBottom(x)
-        .tickSize(2)
+        .tickSize(0)
         .tickValues(years)
         .tickFormat(d3.format('d'))
     )
+
+  // axis
+  //   .append('circle')
+  //   .attr('class', 'timeline-bg-circle')
+  //   .attr('id', 'timeline-bg-circle')
+  //   .attr('cx', width)
+  //   .attr('cy', 0)
+  //   .attr('r', 5)
+  //   .attr('z-index', 1)
+  //   .attr('fill', COLOR.DARK_GREY)
 
   // scrolling effects
   new Waypoint({
@@ -50,11 +67,10 @@ d3.csv('./files/lakers_champ.csv', data => {
           .transition()
           .duration(1000)
           .attr('y2', (d, i) => {
-            if (d == 2020) return -60
             if (i % 2 === 0) {
-              return -40
+              return -60
             }
-            return 40
+            return 60
           })
           .attr('stroke', COLOR.LIGHT_GREY)
 
@@ -62,13 +78,12 @@ d3.csv('./files/lakers_champ.csv', data => {
           .transition()
           .duration(1000)
           .attr('y', (d, i) => {
-            if (d == 2020) return -90
             if (i % 2 === 0) {
-              return -70
+              return -90
             }
-            return 60
+            return 80
           })
-          .attr('font-size', 13)
+          .attr('font-size', 15)
           .attr('fill', COLOR.DARK_GREY)
 
         var ticks = d3.selectAll('.lakers-champ-axis .tick')
@@ -78,13 +93,12 @@ d3.csv('./files/lakers_champ.csv', data => {
             .transition()
             .duration(1000)
             .attr('cy', function (d) {
-              if (d == 2020) return -60
               if (i % 2 === 0) {
-                return -40
+                return -60
               }
-              return 40
+              return 60
             })
-            .attr('r', 10)
+            .attr('r', 12)
             .attr('fill', function (d) {
               if (d === 2020) return COLOR.LAKERS_YELLOW
               return COLOR.LAKERS_PURPLE
@@ -95,59 +109,75 @@ d3.csv('./files/lakers_champ.csv', data => {
     offset: 700
   })
 
+  // new Waypoint({
+  //   element: document.getElementById('lakers-champ-timeline'),
+  //   handler: function (direction) {
+  //     console.log('here')
+  //     if (direction == 'down') {
+  //       document.getElementById('timeline-bg-circle').classList.add('timeline-bg-circle-expand')
+  //     }
+  //   },
+  //   offset: 400
+  // })
+
   d3.selectAll('.lakers-champ-axis path').attr('stroke', COLOR.LIGHT_GREY)
 
   // add image
   var champRecordsStories = [
     {
-      cx: x(1949),
-      cy: -60,
-      x: x(1949) - 50,
-      y: -110,
+      cx: x(1947),
+      cy: -50,
+      x: x(1947) - 50,
+      y: -100,
       link: './files/images/champ-timeline/lakers-champ-gm.jpg',
       width: 100,
-      text1: '1947–1958, George Mikan dominated the league ',
-      text2: 'and found Minneapolis dynasty.'
+      text1: '1947–1958, George Mikan ',
+      text2: 'dominated the league and  ',
+      text3: 'found Minneapolis dynasty.'
     },
     {
-      cx: x(1968),
-      cy: 230,
-      x: x(1968) - 50,
-      y: 180,
+      cx: x(1964),
+      cy: 280,
+      x: x(1964) - 50,
+      y: 230,
       link: './files/images/champ-timeline/lakers-champ-wc.jpg',
       width: 120,
-      text1: '1968–1973, Wilt Chamberlain set countless records,',
-      text2: 'but won only 1 championship.'
+      text1: '1968–1973, Wilt Chamberlain',
+      text2: 'joined Lakers and won only ',
+      text3: 'one championship.'
     },
     {
-      cx: x(1978),
-      cy: -60,
-      x: x(1978) - 50,
-      y: -110,
+      cx: x(1976),
+      cy: -50,
+      x: x(1976) - 50,
+      y: -100,
       link: './files/images/champ-timeline/lakers-champ-showtime.jpg',
       width: 140,
-      text1: '1979–1991, Magic Johnson, Kareem Abdul-Jabba',
-      text2: 'and the "Showtime".'
+      text1: '1979–1991, Magic Johnson, Kareem',
+      text2: 'Abdul-Jabba led the "Lakers',
+      text3: 'Showtime" and won 5 champs.'
     },
     {
-      cx: x(1997),
-      cy: 240,
-      x: x(1997) - 55,
-      y: 200,
+      cx: x(1994),
+      cy: 280,
+      x: x(1994) - 55,
+      y: 240,
       link: './files/images/champ-timeline/lakers-champ-ok.jpg',
       width: 120,
-      text1: "1996–2004, O'Neal-Bryant dynasty and",
-      text2: 'the "three ring circus".'
+      text1: '1996–2004, the best DUO - ',
+      text2: "O'Neal and Bryant Dynasty",
+      text3: 'with three rings.'
     },
     {
-      cx: x(2008),
-      cy: -60,
-      x: x(2008) - 80,
-      y: -110,
+      cx: x(2003),
+      cy: -50,
+      x: x(2003) - 80,
+      y: -100,
       link: './files/images/champ-timeline/lakers-champ-kobe.jpg',
       width: 150,
-      text1: '2007-2011 Kobe Bryant and Paul Casol brought Lakers back to',
-      text2: 'former glory after Shaq left.'
+      text1: '2007-2011 Bryant and Casol built',
+      text2: 'another dynasty after Shaq left',
+      text3: 'and they beat Celtics in the finals.'
     }
   ]
 
@@ -171,16 +201,22 @@ d3.csv('./files/lakers_champ.csv', data => {
   lakers_champ_text
     .append('tspan')
     .attr('x', d => d.cx + 60)
-    .attr('y', d => d.cy - 10)
-    .attr('font-size', '13px')
+    .attr('y', d => d.cy - 15)
+    .attr('font-size', '16px')
     .attr('fill', COLOR.DARK_GREY)
     .text(d => d.text1)
     .append('tspan')
     .attr('x', d => d.cx + 60)
-    .attr('y', d => d.cy + 10)
-    .attr('font-size', '13px')
+    .attr('y', d => d.cy + 7)
+    .attr('font-size', '16px')
     .attr('fill', COLOR.DARK_GREY)
     .text(d => d.text2)
+    .append('tspan')
+    .attr('x', d => d.cx + 60)
+    .attr('y', d => d.cy + 29)
+    .attr('font-size', '16px')
+    .attr('fill', COLOR.DARK_GREY)
+    .text(d => d.text3)
 
   svg
     .selectAll('lakers-champ-clipPath-image')

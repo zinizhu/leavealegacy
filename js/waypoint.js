@@ -83,5 +83,5 @@ new Waypoint({
       this.element.classList.remove('lakers-season-logs')
     }
   },
-  offset: 100
+  offset: 300
 })

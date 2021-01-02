@@ -5,21 +5,21 @@ var season_logs_height = 200
 
 // create svg
 var seasonLogs = d3
-  .select('#lakers-season-logs')
-  .append('svg')
-  .attr(
-    'width',
-    season_logs_width + season_logs_margin.left + season_logs_margin.right
-  )
-  .attr(
-    'height',
-    season_logs_height + season_logs_margin.top + season_logs_margin.bottom
-  )
-  .append('g')
-  .attr(
-    'transform',
-    'translate(' + season_logs_margin.left + ',' + season_logs_margin.top + ')'
-  )
+.select('#lakers-season-logs')
+.append('svg')
+.attr(
+  'width',
+  season_logs_width + season_logs_margin.left + season_logs_margin.right
+)
+.attr(
+  'height',
+  season_logs_height + season_logs_margin.top + season_logs_margin.bottom
+)
+.append('g')
+.attr(
+  'transform',
+  'translate(' + season_logs_margin.left + ',' + season_logs_margin.top + ')'
+)
 
 // read data
 d3.csv('./files/lakers_game_logs.csv', data => {

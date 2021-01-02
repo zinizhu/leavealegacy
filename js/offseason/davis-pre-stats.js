@@ -61,9 +61,9 @@ var davis_pre_pies = d3
   )
 
 new Waypoint({
-  element: document.getElementById('davis-pre-stats-small-multiples'),
+  element: document.getElementById('davis-pre-pies'),
   handler: function (direction) {
-    for (var j = 0; j < 4; j++) {
+    for (var j = 0; j < 3; j++) {
       d3.select('.davis-pre-pie-' + j)
         .selectAll('davis_pre_fg_slice')
         .data(datas_pre_figures[j])
@@ -91,7 +91,7 @@ new Waypoint({
   offset: 800
 })
 
-for (var i = 0; i < 4; i++) {
+for (var i = 0; i < 3; i++) {
   d3.select('.davis-pre-pie-' + i)
     .append('text')
     .attr('x', -0)
