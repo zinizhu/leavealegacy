@@ -7,6 +7,8 @@ var miseryGraphContainerEl = document
 var miseryGraphEl = document.getElementById('kobe-injury-graph-svg')
 var draftGraphEl = document.getElementById('draft-graph-svg')
 var recordGraphEl = document.getElementById('record-graph-svg')
+var timelineCircleEl = document.getElementById('transition-circle-svg')
+var miserySectionWholeEl = document.getElementById('time-of-misery')
 
 new Waypoint({
   element: miserySectionEl,
@@ -36,6 +38,7 @@ new Waypoint({
   offset: 250
 })
 
+
 new Waypoint({
   element: miseryTextBoxEls.item(0),
   handler: function (direction) {
@@ -62,11 +65,18 @@ new Waypoint({
       draftGraphEl.setAttribute('display', 'none')
       miseryTextBoxEls.item(1).classList.remove('seen')
       miseryTextBoxEls.item(2).classList.add('seen')
+
+      // timelineCircleEl.setAttribute('display', 'none')
+      // miserySectionWholeEl.style.backgroundColor = COLOR.DARK_GREY
     } else {
       recordGraphEl.setAttribute('display', 'none')
       draftGraphEl.setAttribute('display', 'block')
       miseryTextBoxEls.item(1).classList.add('seen')
       miseryTextBoxEls.item(2).classList.remove('seen')
+
+      // timelineCircleEl.setAttribute('display', 'block')
+      // miserySectionWholeEl.style.backgroundColor = COLOR.BACKGROUND_LIGHT
+      // miserySectionWholeEl.style.transitionDuration = 0
     }
   },
   offset: 0

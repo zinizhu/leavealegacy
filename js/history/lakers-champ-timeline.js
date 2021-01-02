@@ -56,6 +56,7 @@ d3.csv('./files/lakers_champ.csv', data => {
   //   .attr('r', 5)
   //   .attr('z-index', 1)
   //   .attr('fill', COLOR.DARK_GREY)
+  //   .attr('position', 'fixed')
 
   // scrolling effects
   new Waypoint({
