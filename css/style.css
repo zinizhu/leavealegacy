@@ -34,6 +34,7 @@ body {
   text-align: center;
   padding: 40px 30px;
   transition: all 1000ms ease-in;
+  width: 100%;
 }
 
 .page p {
@@ -345,6 +346,35 @@ body {
 .regular-season-summary-graph-container.is-bottom {
   bottom: -500px;
   top: auto;
+}
+
+
+/* kobe page */
+#kobe-memory {
+  position: relative;
+
+  background-image: url('../files/images/kobe_memo.jpg');
+  opacity: 0.9;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#kobe-memory-text {
+  background-color: #5454547f;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#kobe-memory-text p {
+  color: white;
+  font-size: 30px;
+  line-height: 1.7em;
 }
 
 /* end */
