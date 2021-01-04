@@ -47,17 +47,6 @@ d3.csv('./files/lakers_champ.csv', data => {
         .tickFormat(d3.format('d'))
     )
 
-  // axis
-  //   .append('circle')
-  //   .attr('class', 'timeline-bg-circle')
-  //   .attr('id', 'timeline-bg-circle')
-  //   .attr('cx', width)
-  //   .attr('cy', 0)
-  //   .attr('r', 5)
-  //   .attr('z-index', 1)
-  //   .attr('fill', COLOR.DARK_GREY)
-  //   .attr('position', 'fixed')
-
   // scrolling effects
   new Waypoint({
     element: document.getElementById('lakers-champ-timeline'),

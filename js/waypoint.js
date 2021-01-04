@@ -9,7 +9,6 @@ var games = [
   { id: '0021900342', fill: '#FDB927' },
   { id: '0021900390', fill: '#FDB927' },
   { id: '0021900684', fill: '#787878' },
-  { id: '0021900754', fill: '#FDB927' },
   { id: '0021900948', fill: '#FDB927' }
 ]
 
@@ -25,6 +24,9 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
         var rectClass = '.season-log-' + games[order].id
         d3.selectAll(rectClass).style('fill', 'red')
 
+        var annonationClass = '.annotation-' + order
+        d3.selectAll(annonationClass).style('display', 'block')
+
         if (order != 0) {
           // set back prev
           var prevRectClass = '.season-log-' + games[order - 1].id
@@ -32,12 +34,11 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
         }
       } else {
         this.element.classList.remove('text-show')
-        if (order === 0) {
-          regularSeasonLogsEl.classList.remove('lakers-season-logs')
-        }
         // highlight rect
         var rectClass = '.season-log-' + games[order].id
         d3.selectAll(rectClass).style('fill', games[order].fill)
+        var annonationClass = '.annotation-' + order
+        d3.selectAll(annonationClass).style('display', 'none')
         if (order != 0) {
           // set back prev
           var prevRectClass = '.season-log-' + games[order - 1].id
@@ -45,7 +46,7 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
         }
       }
     },
-    offset: 500
+    offset: "60%"
   })
 
   new Waypoint({
@@ -54,21 +55,39 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
       var order = +this.element.getAttribute('order')
       if (direction == 'down') {
         this.element.classList.remove('text-show')
+        var annonationClass = '.annotation-' + (order)
+        d3.selectAll(annonationClass).style('display', 'none')
 
         if (order === pageElements.length - 1) {
-          regularSeasonLogsEl.classList.remove('lakers-season-logs')
+          console.log('yoho')
+          regularSeasonLogsEl.classList.remove('fixed')
+          regularSeasonLogsEl.classList.add('is-bottom')
+
+          var rectClass = '.season-log-' + games[order].id
+          d3.selectAll(rectClass).style('fill', games[order].fill)
+          var annonationClass = '.annotation-' + (order)
+          d3.selectAll(annonationClass).style('display', 'none')
         }
       } else {
         this.element.classList.add('text-show')
-        regularSeasonLogsEl.classList.add('lakers-season-logs')
+        var annonationClass = '.annotation-' + (order)
+        d3.selectAll(annonationClass).style('display', 'block')
+        if (order === pageElements.length - 1) {
+          regularSeasonLogsEl.classList.add('fixed')
+          regularSeasonLogsEl.classList.remove('is-bottom')
+          var rectClass = '.season-log-' + games[order].id
+          d3.selectAll(rectClass).style('fill', 'red')
+          var annonationClass = '.annotation-' + (order)
+          d3.selectAll(annonationClass).style('display', 'block')
+        }
       }
     },
     offset: function () {
       var order = +this.element.getAttribute('order')
       if (order === pageElements.length - 1) {
-        return -600
+        return -this.element.clientHeight * 0.8
       } else {
-        return -this.element.clientHeight * 0.2
+        return this.element.clientHeight * 0.2
       }
     }
   })
@@ -78,10 +97,10 @@ new Waypoint({
   element: regularSeasonLogsEl,
   handler: function (direction) {
     if (direction == 'down') {
-      this.element.classList.add('lakers-season-logs')
+      regularSeasonLogsEl.classList.add('fixed')
     } else {
-      this.element.classList.remove('lakers-season-logs')
+      regularSeasonLogsEl.classList.remove('fixed')
     }
   },
-  offset: 300
+  offset: 0
 })

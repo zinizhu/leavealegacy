@@ -231,7 +231,136 @@ body {
   z-index: 2;
 }
 
+/* Regular Season */
+#regular-season {
+  background-color: var(--BACKGROUND);
+  position: relative;
+}
+
+.lakers-season-logs-class {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.lakers-season-logs-class svg{
+  top: 200px;
+}
+
+.lakers-season-logs-class.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.lakers-season-logs-class.is-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#regular-season-log-story {
+  margin-top: 35%;
+  text-align: left !important;
+}
+
+#regular-season-log-story-sections {
+  margin: auto;
+  top: 0px;
+  z-index: 90;
+  text-align: center;
+}
+
+.lakers-season-story-image {
+  height: 400px;
+  border-radius: 4px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.step {
+  margin-bottom: 300px;
+}
+
+
+.section-title p {
+  text-align: center;
+}
+
+/* regular season summary */
+#regular-season-summary {
+  background-color: var(--BACKGROUND);
+  position: relative;
+}
+
+
+.regular-season-summary-section {
+  margin-top: 100px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.regular-season-summary-text  {
+  width: 40%;
+  text-align: center;
+  padding-top: 20%;
+}
+
+#summary-step-4 {
+  margin-bottom: 80%;
+}
+
+.regular-season-summary-text .text-box {
+  width: 60%;
+  vertical-align: center;
+
+  padding: 6%;
+  margin: auto;
+  margin-bottom: 100%;
+  /* margin-top: 30%; */
+
+  font-size: 40px;
+  text-align: left;
+  line-height: 1.2em;
+
+  opacity: 1;
+}
+
+
+.regular-season-summary-graph-container {
+  position: absolute;
+  top: 0;
+  margin-left: 40rem;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.regular-season-summary-graph-container.is-fixed {
+  position: fixed;
+}
+
+.regular-season-summary-graph-container.is-bottom {
+  bottom: -500px;
+  top: auto;
+}
+
 /* end */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .text-show {
   opacity: 1 !important;
@@ -239,7 +368,7 @@ body {
 
 .text-hide {
   opacity: 0.05;
-  transition: all 250ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 /* layout */
@@ -370,64 +499,6 @@ body {
   color: orange;
 }
 
-/* page-4 regular season */
-#regular-season-log-story {
-  margin-top: 100px;
-  text-align: left !important;
-}
-
-#regular-season-log-story-sections {
-  /* position: relative; */
-  display: inline-block;
-  margin-left: 100px;
-  top: 0px;
-  z-index: 90;
-}
-
-.step {
-  margin-bottom: 300px;
-}
-
-.step p {
-  margin-left: 0px;
-}
-
-.lakers-season-logs {
-  /* display: block; */
-  /* text-align: center; */
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 300px;
-  width: 100%;
-  margin: auto;
-}
-
-#lakers-season-pts-text {
-  margin-top: 300px;
-}
-
-.lakers-season-pts-sec {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
-
-#lakers-season-pts-rank {
-  margin-left: 50px;
-}
-
-#lakers-players-summary {
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-.lakers-season-story-image {
-  width: 470px;
-  border-radius: 4px;
-  margin-bottom: 30px;
-}
 
 /* page5 - playoffs */
 #lakers-playoffs-general-stats {
