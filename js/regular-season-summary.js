@@ -410,7 +410,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         }
       }
     },
-    offset: "65%"
+    offset: "50%"
   })
 
   new Waypoint({

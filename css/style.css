@@ -3,7 +3,8 @@
   --LAKERS_YELLOW_OP: #ffdd94;
   --LAKERS_PURPLE: #552583;
   --LAKERS_BLACK: #000000;
-  --DARK_GREY: #434343;
+  /* --DARK_GREY: #434343; */
+  --DARK_GREY: #202125;
   --LIGHT_GREY: #d4d4d4;
   --ORANGE: #ff9100;
   --RED: #fd2727;
@@ -377,220 +378,83 @@ body {
   line-height: 1.7em;
 }
 
-/* end */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.text-show {
-  opacity: 1 !important;
-}
-
-.text-hide {
-  opacity: 0.05;
-  transition: all 100ms ease-in;
-}
-
-/* layout */
-.div-container {
-  display: flex;
-  justify-content: center;
+/* playoffs */
+#playoffs {
+  /* background-color: #202125; */
+  background-color: var(--DARK_GREY);
   width: 100%;
-  margin-top: 50px;
+  color: var(--LIGHT_GREY);
 }
 
-.div-half {
-  width: 800px;
+#playoffs .three-dots span {
+  background: var(--LIGHT_GREY);
 }
 
-/* page 1 title */
-#page-1 {
-  display: block;
-  text-align: center;
-}
-
-#page-1-title h1 {
-  font-size: 60px;
-}
-
-#page-1-title h2 {
-  font-size: 24px;
-  margin-bottom: 40px;
-  color: var(--DARK_GREY);
-}
-
-#page-1-title h3 {
-  font-size: 20px;
-  color: var(--DARK_GREY);
-}
-
-#page-1-img {
-  margin-bottom: 60px;
-}
-
-#page-1-img img {
-  width: 800px;
-}
-
-/* page 2 lakers champ timeline*/
-
-/* page-3 off-season */
-#davis-off-season {
-  margin: 50px 100px;
+#playoffs-intro-section {
   display: flex;
-  justify-content: center;
+  margin:auto 20%;
 }
 
-#davis-off-season img {
-  margin: auto;
-  border-radius: 4px;
-  width: 300px;
-}
-
-#davis-off-season-left {
-  margin-right: 40px;
-}
-
-#davis-off-season-left p {
-  font-size: 14px;
-  line-height: 150%;
-  text-align: center;
-}
-
-#davis-off-season-right {
-  margin-left: 40px;
-}
-
-#davis-pre-stats-small-multiples {
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-#vogel-off-season {
-  margin: 50px 100px;
-  display: flex;
-  justify-content: center;
-}
-
-#vogel-off-season img {
-  margin: auto;
-  border-radius: 4px;
-  width: 300px;
-}
-
-#vogel-off-season-left {
-  margin-right: 40px;
-}
-
-#vogel-off-season-right {
-  margin-left: 40px;
-}
-
-#vogel-off-season-right p {
-  font-size: 14px;
-  line-height: 150%;
-  text-align: center;
-}
-
-.other-players-off-season-row {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-.other-players-off-season {
-  display: block;
-  text-align: center;
-}
-
-.other-players-off-season p {
-  text-align: center;
-}
-
-#player-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-/* rating stars */
-.checked {
-  color: orange;
-}
-
-
-/* page5 - playoffs */
-#lakers-playoffs-general-stats {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-#playoffs-dashboard {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-#lakers-playoffs-game-details-section {
-  display: flex;
-  justify-content: center;
-}
-
-#playoffs-dashboard-left {
-  margin-right: 50px;
-}
-
-#lakers-playoffs-records {
-  margin-left: 80px;
-}
-
-#lakers-playoffs-players-select {
-  display: block;
+#playoffs-intro-section .left {
+  width: 65%;
+  margin-right: 0;
   text-align: right;
-  margin-top: 30px;
 }
 
-/* page6 LBJ & AD */
-.moments-fixed {
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0);
-  top: 100px;
-  z-index: 1;
+
+#playoffs-intro-section .left p{
+  width: 80%;
+  color: var(--LIGHT_GREY);
+  font-size: 26px;
+  line-height: 160%;
 }
 
-#big-moments-img-div {
-  margin-top: 80px;
-  display: block;
-  text-align: center;
+#playoffs-intro-section .right {
+  width: 35%;
 }
 
-#lakers-cover {
-  margin: auto;
-  width: 800px;
-  height: auto;
-}
-
-.reference {
-  margin: 50px 500px;
-  display: block;
+#playoffs-intro-section .right {
   text-align: left;
 }
 
-.reference li {
+#playoffs-intro-section .right img {
+  width: 400px;
+  margin-left: 20px;
+}
+
+/* playoff games */
+#playoffs-rounds {
+  position: relative;
+  width: 100%;
+  height: 480%;
+  overflow: hidden;
+
+  background: #202125;
+}
+
+#playoffs-rounds svg{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* reference */
+
+#reference {
+  background-color: var(--DARK_GREY);
+  color:  var(--LIGHT_GREY);
+  text-align: left;
+}
+
+#reference li {
   font-size: 18px;
-  color: var(--DARK_GREY);
+  color: var(--LIGHT_GREY);
+}
+
+
+#reference a {
+  color: var(--LIGHT_GREY);
 }
 
 a:link {
@@ -604,3 +468,5 @@ a:hover {
 a:visited {
   color: var(--DARK_GREY);
 }
+
+/* end */

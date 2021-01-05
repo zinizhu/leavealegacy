@@ -31,6 +31,11 @@ function handleStepProgressOut (response) {
   var radius = window.outerWidth * (1 - response.progress)
   console.log(radius)
   d3.select('#timeline-bg-circle').attr('r', radius)
+  if (response.progress === 1) {
+    d3.select('#timeline-bg-circle').attr('display', 'none')
+  } else {
+    d3.select('#timeline-bg-circle').attr('display', 'block')
+  }
 }
 
 console.log('size', window.outerWidth)
