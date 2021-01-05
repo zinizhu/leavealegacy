@@ -76,34 +76,33 @@ const portland_curve_down_points = [
   [290, 535],
   [320, 535],
   [350, 535],
-  [380, 538],
-  [410, 546],
-  [440, 560],
-  [500, 600]
+  [380, 535],
+  [410, 535],
+  [440, 536],
+  [500, 539]
 ]
 
 /* Lakers vs. Houston */
-
 const houston_curve_up_points = [
-  [500, 600],
-  [560, 640],
-  [590, 654],
-  [620, 662],
-  [650, 665],
-  [680, 665],
-  [710, 667],
-  [720, 669],
-  [730, 669],
-  [740, 672],
-  [780, 700],
+  [500, 539],
+  [530, 543],
+  [560, 547],
+  [590, 552],
+  [620, 558],
+  [650, 568],
+  [680, 580],
+  [710, 593],
+  [740, 616],
+  [780, 670],
+  [795, 740],
   [800, 800]
 ]
 
 const houston_curve_down_points = [
-  [500, 1200],
-  [560, 1160],
-  [590, 1146],
-  [620, 1138],
+  [500, 1138],
+  [560, 1136],
+  [590, 1135],
+  [620, 1135],
   [650, 1135],
   [680, 1135],
   [710, 1133],
@@ -117,15 +116,16 @@ const houston_curve_down_points = [
 /* Lakers vs. Denver */
 const denver_curve_up_points = [
   [200, 1400],
-  [220, 1300],
-  [260, 1270],
-  [290, 1265],
-  [320, 1265],
-  [350, 1265],
-  [380, 1262],
-  [410, 1254],
-  [440, 1240],
-  [500, 1200]
+  [230, 1250],
+  [260, 1200],
+  [290, 1183],
+  [320, 1170],
+  [350, 1160],
+  [380, 1152],
+  [410, 1146],
+  [440, 1143],
+  [470, 1140],
+  [500, 1138]
 ]
 
 const denver_curve_down_points = [
@@ -135,26 +135,26 @@ const denver_curve_down_points = [
   [290, 1735],
   [320, 1735],
   [350, 1735],
-  [380, 1738],
-  [410, 1746],
-  [440, 1760],
-  [500, 1800]
+  [380, 1735],
+  [410, 1735],
+  [440, 1736],
+  [500, 1739]
 ]
 
 /* Lakers vs. Miami */
 
 const miami_curve_up_points = [
-  [500, 1800],
-  [560, 1840],
-  [590, 1854],
-  [620, 1862],
-  [650, 1865],
-  [680, 1865],
-  [710, 1867],
-  [720, 1869],
-  [730, 1869],
-  [740, 1872],
-  [780, 1900],
+  [500, 1739],
+  [530, 1743],
+  [560, 1747],
+  [590, 1752],
+  [620, 1758],
+  [650, 1768],
+  [680, 1780],
+  [710, 1793],
+  [740, 1816],
+  [780, 1870],
+  [795, 1940],
   [800, 2000]
 ]
 
@@ -239,17 +239,22 @@ playoffsSvg
   .attr('font-size', 20)
 
 // text and text wrap
-var endingWordsTextLine1 =
-  'LeBron James got his fourth Finals MVP. AD won his first ring. The Lakers became'
-var endingWordsTextLine2 =
-  'the first team in league history to go undefeated when taking a lead into the fourth'
-var endingWordsTextLine3 =
-  'quarter, going 57-0 between the regular season and the playoffs. They were also'
-var endingWordsTextLine4 =
-  'the first franchise to earn the No. 1 seed following a five-year postseason absence.'
+var endingTextGroup = playoffsSvg
+  .append('g')
+  .attr('class', 'endingWordGroup')
+  .attr('transform', 'translate(195,2735)')
 
-var endingWordTextLine5 =
+var endingWordsText =
+  'LeBron James got his fourth Finals MVP. AD won his first ring. The Lakers became the first team in league history to go undefeated when taking a lead into the fourth quarter, going 57-0 between the regular season and the playoffs. They were also the first franchise to earn the No. 1 seed following a five-year postseason absence.<br /><br />' +
   'The franchise did it. And they will do it again next year.'
+
+var endingTextGroupNode = endingTextGroup.append('text').text(endingWordsText)
+
+var endingTextWrap = d3
+  .textwrap()
+  .bounds({ width: 620, height: 400 })
+  .padding(10)
+endingTextGroupNode.call(endingTextWrap)
 
 playoffsSvg
   .append('line')
@@ -269,56 +274,11 @@ playoffsSvg
   .attr('stroke', 'white')
   .attr('stroke-width', 1)
 
-playoffsSvg
-  .append('text')
-  .attr('x', 500)
-  .attr('y', 2750)
-  .text(endingWordsTextLine1)
-  .attr('text-anchor', 'middle')
-  .attr('font-size', 14)
-  .attr('fill', 'white')
-
-playoffsSvg
-  .append('text')
-  .attr('x', 500)
-  .attr('y', 2780)
-  .text(endingWordsTextLine2)
-  .attr('text-anchor', 'middle')
-  .attr('font-size', 14)
-  .attr('fill', 'white')
-
-playoffsSvg
-  .append('text')
-  .attr('x', 500)
-  .attr('y', 2810)
-  .text(endingWordsTextLine3)
-  .attr('text-anchor', 'middle')
-  .attr('font-size', 14)
-  .attr('fill', 'white')
-
-playoffsSvg
-  .append('text')
-  .attr('x', 500)
-  .attr('y', 2840)
-  .text(endingWordsTextLine4)
-  .attr('text-anchor', 'middle')
-  .attr('font-size', 14)
-  .attr('fill', 'white')
-
-playoffsSvg
-  .append('text')
-  .attr('x', 500)
-  .attr('y', 2890)
-  .text(endingWordTextLine5)
-  .attr('text-anchor', 'middle')
-  .attr('font-size', 14)
-  .attr('fill', 'white')
-
 /* portland */
 const portland_parallelograms = []
 
 for (var i = 0; i < 5; i++) {
-  var x = 400 + 110 * i
+  var x = 350 + 110 * i
   var y = 80
   var path = [
     [x, y],
@@ -348,53 +308,51 @@ playoffsSvg
   })
 
 var portland_games_idx = [0, 3, 4]
-var portland_line_end = [130, 180, 350] 
+var portland_line_end = [130, 180, 350]
 
 portland_games_idx.forEach((idx, i) => {
-  var x = 400 + 110 * idx + 50
+  var x = 350 + 110 * idx + 50
   var portland_game_line = [
     [x, 80],
     [x, portland_line_end[i]]
   ]
   playoffsSvg
-  .append('path')
-  .attr('d', playoffs_curve_scale(portland_game_line))
-  .attr('stroke', 'white')
-  .attr('stroke-width', 1.5)
-  .attr('fill', 'none')
-  .style('stroke-dasharray', '8, 4')
+    .append('path')
+    .attr('d', playoffs_curve_scale(portland_game_line))
+    .attr('stroke', 'white')
+    .attr('stroke-width', 1.5)
+    .attr('fill', 'none')
+    .style('stroke-dasharray', '8, 4')
 
   playoffsSvg
-  .append('circle')
-  .attr('cx', x)
-  .attr('cy', 20 + portland_line_end[i])
-  .attr('r', 20)
-  .attr('stroke', 'white')
-  .attr('stroke-width', 1)
-  .attr('fill', 'none')
+    .append('circle')
+    .attr('cx', x)
+    .attr('cy', 16 + portland_line_end[i])
+    .attr('r', 16)
+    .attr('stroke', 'white')
+    .attr('stroke-width', 1)
+    .attr('fill', 'none')
 
   const portland_game_tri = [
-    [x - 7, 20 + portland_line_end[i] + 10],
-    [x - 7, 20 + portland_line_end[i] - 10],
-    [x + 10, 20 + portland_line_end[i]],
-    [x - 7, 20 + portland_line_end[i] + 10],
+    [x - 6, 16 + portland_line_end[i] + 8],
+    [x - 6, 16 + portland_line_end[i] - 8],
+    [x + 8, 16 + portland_line_end[i]],
+    [x - 6, 16 + portland_line_end[i] + 8]
   ]
 
   playoffsSvg
-  .datum(portland_game_tri)
-  .append('path')
-  .attr(
-    'd',
-    d3
-      .line()
-      .x(d => d[0])
-      .y(d => d[1])
-  )
-  .attr('fill', 'none')
-  .attr('stroke', 'white')
+    .datum(portland_game_tri)
+    .append('path')
+    .attr(
+      'd',
+      d3
+        .line()
+        .x(d => d[0])
+        .y(d => d[1])
+    )
+    .attr('fill', 'none')
+    .attr('stroke', 'white')
 })
-
-
 
 /* houston */
 const houston_parallelograms = []
@@ -430,7 +388,7 @@ playoffsSvg
   })
 
 var houston_games_idx = [1, 4]
-var houston_line_end = [300 + 600, 200 + 600] 
+var houston_line_end = [300 + 600, 200 + 600]
 
 houston_games_idx.forEach((idx, i) => {
   var x = 60 + 110 * idx + 50
@@ -439,31 +397,63 @@ houston_games_idx.forEach((idx, i) => {
     [x, houston_line_end[i]]
   ]
   playoffsSvg
-  .append('path')
-  .attr('d', playoffs_curve_scale(houston_game_line))
-  .attr('stroke', 'white')
-  .attr('stroke-width', 1.5)
-  .attr('fill', 'none')
-  .style('stroke-dasharray', '8, 4')
+    .append('path')
+    .attr('d', playoffs_curve_scale(houston_game_line))
+    .attr('stroke', 'white')
+    .attr('stroke-width', 1.5)
+    .attr('fill', 'none')
+    .style('stroke-dasharray', '8, 4')
 
   playoffsSvg
-  .append('circle')
-  .attr('cx', x)
-  .attr('cy', 20 + houston_line_end[i])
-  .attr('r', 20)
-  .attr('stroke', 'white')
-  .attr('stroke-width', 1)
-  .attr('fill', 'none')
+    .append('circle')
+    .attr('cx', x)
+    .attr('cy', 16 + houston_line_end[i])
+    .attr('r', 16)
+    .attr('stroke', 'white')
+    .attr('stroke-width', 1)
+    .attr('fill', 'none')
 
   const houston_game_tri = [
-    [x - 7, 20 + houston_line_end[i] + 10],
-    [x - 7, 20 + houston_line_end[i] - 10],
-    [x + 10, 20 + houston_line_end[i]],
-    [x - 7, 20 + houston_line_end[i] + 10],
+    [x - 5, 16 + houston_line_end[i] + 8],
+    [x - 5, 16 + houston_line_end[i] - 8],
+    [x + 8, 16 + houston_line_end[i]],
+    [x - 5, 16 + houston_line_end[i] + 8]
   ]
 
   playoffsSvg
-  .datum(houston_game_tri)
+    .datum(houston_game_tri)
+    .append('path')
+    .attr(
+      'd',
+      d3
+        .line()
+        .x(d => d[0])
+        .y(d => d[1])
+    )
+    .attr('fill', 'none')
+    .attr('stroke', 'white')
+})
+
+/* denver */
+const denver_parallelograms = []
+
+for (var i = 0; i < 5; i++) {
+  var x = 400 + 110 * i
+  var y = 80 + 1200
+  var path = [
+    [x, y],
+    [x + 100, y],
+    [x + 108, y - 8],
+    [x + 8, y - 8],
+    [x, y]
+  ]
+  denver_parallelograms.push(path)
+}
+
+playoffsSvg
+  .selectAll('denver-parallelograms')
+  .data(denver_parallelograms)
+  .enter()
   .append('path')
   .attr(
     'd',
@@ -472,7 +462,351 @@ houston_games_idx.forEach((idx, i) => {
       .x(d => d[0])
       .y(d => d[1])
   )
-  .attr('fill', 'none')
-  .attr('stroke', 'white')
+  .attr('fill', (d, i) => {
+    if (i === 1) return COLOR.BLUE
+    return COLOR.LAKERS_YELLOW
+  })
+
+var denver_games_idx = [1, 4]
+var denver_line_end = [180 + 1200, 200 + 1200]
+
+denver_games_idx.forEach((idx, i) => {
+  var x = 400 + 110 * idx + 50
+  var denver_game_line = [
+    [x, 80 + 1200],
+    [x, denver_line_end[i]]
+  ]
+  playoffsSvg
+    .append('path')
+    .attr('d', playoffs_curve_scale(denver_game_line))
+    .attr('stroke', 'white')
+    .attr('stroke-width', 1.5)
+    .attr('fill', 'none')
+    .style('stroke-dasharray', '8, 4')
+
+  playoffsSvg
+    .append('circle')
+    .attr('cx', x)
+    .attr('cy', 16 + denver_line_end[i])
+    .attr('r', 16)
+    .attr('stroke', 'white')
+    .attr('stroke-width', 1)
+    .attr('fill', 'none')
+
+  const denver_game_tri = [
+    [x - 5, 16 + denver_line_end[i] + 8],
+    [x - 5, 16 + denver_line_end[i] - 8],
+    [x + 8, 16 + denver_line_end[i]],
+    [x - 5, 16 + denver_line_end[i] + 8]
+  ]
+
+  playoffsSvg
+    .datum(denver_game_tri)
+    .append('path')
+    .attr(
+      'd',
+      d3
+        .line()
+        .x(d => d[0])
+        .y(d => d[1])
+    )
+    .attr('fill', 'none')
+    .attr('stroke', 'white')
 })
 
+/* miami */
+const miami_parallelograms = []
+
+for (var i = 0; i < 6; i++) {
+  var x = 60 + 100 * i
+  var y = 80 + 1800
+  var path = [
+    [x, y],
+    [x + 90, y],
+    [x + 98, y - 8],
+    [x + 8, y - 8],
+    [x, y]
+  ]
+  miami_parallelograms.push(path)
+}
+
+playoffsSvg
+  .selectAll('miami-parallelograms')
+  .data(miami_parallelograms)
+  .enter()
+  .append('path')
+  .attr(
+    'd',
+    d3
+      .line()
+      .x(d => d[0])
+      .y(d => d[1])
+  )
+  .attr('fill', (d, i) => {
+    if (i === 1 || i === 4) return COLOR.RED
+    return COLOR.LAKERS_YELLOW
+  })
+
+var miami_games_idx = [3, 4, 5]
+var miami_line_end = [140 + 1800, 330 + 1800, 160 + 1800]
+
+miami_games_idx.forEach((idx, i) => {
+  var x = 60 + 100 * idx + 45
+  var miami_game_line = [
+    [x, 80 + 1800],
+    [x, miami_line_end[i]]
+  ]
+  playoffsSvg
+    .append('path')
+    .attr('d', playoffs_curve_scale(miami_game_line))
+    .attr('stroke', 'white')
+    .attr('stroke-width', 1.5)
+    .attr('fill', 'none')
+    .style('stroke-dasharray', '8, 4')
+
+  playoffsSvg
+    .append('circle')
+    .attr('cx', x)
+    .attr('cy', 20 + miami_line_end[i])
+    .attr('r', 20)
+    .attr('stroke', 'white')
+    .attr('stroke-width', 1)
+    .attr('fill', 'none')
+
+  const miami_game_tri = [
+    [x - 7, 20 + miami_line_end[i] + 10],
+    [x - 7, 20 + miami_line_end[i] - 10],
+    [x + 10, 20 + miami_line_end[i]],
+    [x - 7, 20 + miami_line_end[i] + 10]
+  ]
+
+  playoffsSvg
+    .datum(miami_game_tri)
+    .append('path')
+    .attr(
+      'd',
+      d3
+        .line()
+        .x(d => d[0])
+        .y(d => d[1])
+    )
+    .attr('fill', 'none')
+    .attr('stroke', 'white')
+})
+
+// append text description
+var line_text_interval = 65
+var blob_width = 180
+var blob_height = 800
+
+/* portland */
+
+var portland_text_start = portland_line_end.map(end => end + line_text_interval)
+var portland_text_line_one = [
+  'LAL 93 : 100 POR',
+  'LAL 135 : 115 POR',
+  'LAL 131 : 122 POR'
+]
+var portland_text_line_two = ['Game 1', 'Game 4', 'Game 5']
+var portland_text_blob = [
+  'James became the first person to shoot 23 points, 17 rebounds and 16 assists in the playoffs. It was his 24th postseason triple-double and his assists were a career playoff high.',
+  'It was Kobe Bryant Day. James scored 30 points and 10 assists in 28 minutes and Lakers led by as many as 38 points for their third straight win in the opening-round series.',
+  'Anthony Davis had a playoff-best 43 points. He had a personal 11-0 run in the last quarter to put Los Angeles up 123-112 and all but seal the win.'
+]
+
+for (var i = 0; i < portland_text_start.length; i++) {
+  var midX = 400 + portland_games_idx[i] * 110
+
+  playoffsSvg
+    .append('text')
+    .attr('x', midX)
+    .attr('y', portland_text_start[i])
+    .text(portland_text_line_one[i])
+    .attr('font-size', 14)
+    .attr('text-anchor', 'middle')
+    .attr('fill', COLOR.LAKERS_YELLOW)
+
+  playoffsSvg
+    .append('text')
+    .attr('x', midX)
+    .attr('y', portland_text_start[i] + 18)
+    .text(portland_text_line_two[i])
+    .attr('font-size', 14)
+    .attr('text-anchor', 'middle')
+    .attr('fill', 'white')
+
+  var textwrap = d3
+    .textwrap()
+    .bounds({ width: blob_width, height: blob_height })
+  var textNode = playoffsSvg
+    .append('g')
+    .attr('class', 'playoffs-game-text')
+    .attr(
+      'transform',
+      'translate(' +
+        (midX - blob_width / 2 + 10) +
+        ', ' +
+        (portland_text_start[i] + 36) +
+        ')'
+    )
+    .append('text')
+    .text(portland_text_blob[i])
+
+  textNode.call(textwrap)
+}
+
+/* houston */
+
+var houston_text_start = houston_line_end.map(end => end + line_text_interval)
+var houston_text_line_one = ['LAL 117 : 109 HOU', 'LAL 119 : 96 HOU']
+var houston_text_line_two = ['Game 2', 'Game 5']
+var houston_text_blob = [
+  "James scored 36 points, and the win gave James his NBA-record 162nd postseason victory, surpassing former Lakers guard Derek Fisher's records of 161 wins.",
+  'James scored 29 points and the Lakers wrapped up their first trip to the Western Conference finals since 2010. It was also AD’s first time to play in the West Conference Finals.'
+]
+
+for (var i = 0; i < houston_text_start.length; i++) {
+  var midX = 110 + houston_games_idx[i] * 110
+
+  playoffsSvg
+    .append('text')
+    .attr('x', midX)
+    .attr('y', houston_text_start[i])
+    .text(houston_text_line_one[i])
+    .attr('font-size', 14)
+    .attr('text-anchor', 'middle')
+    .attr('fill', COLOR.LAKERS_YELLOW)
+
+  playoffsSvg
+    .append('text')
+    .attr('x', midX)
+    .attr('y', houston_text_start[i] + 18)
+    .text(houston_text_line_two[i])
+    .attr('font-size', 14)
+    .attr('text-anchor', 'middle')
+    .attr('fill', 'white')
+
+  var textwrap = d3
+    .textwrap()
+    .bounds({ width: blob_width, height: blob_height })
+  var textNode = playoffsSvg
+    .append('g')
+    .attr('class', 'playoffs-game-text')
+    .attr(
+      'transform',
+      'translate(' +
+        (midX - blob_width / 2 + 10) +
+        ', ' +
+        (houston_text_start[i] + 36) +
+        ')'
+    )
+    .append('text')
+    .text(houston_text_blob[i])
+
+  textNode.call(textwrap)
+}
+
+/* denver */
+var denver_text_start = denver_line_end.map(end => end + line_text_interval)
+var denver_text_line_one = ['LAL 105 : 103 DEN', 'LAL 117 : 107 DEN']
+var denver_text_line_two = ['Game 2', 'Game 5']
+var denver_text_blob = [
+  'AD made “The Mamba Shot” and gave the Lakers a 105-103 victory over the Denver Nuggets on Sunday night and a 2-0 lead in the Western Conference finals.',
+  'James finished with 38 points, 16 rebounds and 10 assists, which was his 27th postseason triple-double, to become the fourth player to reach 10 NBA finals. He wore out the path to the NBA finals in Eastern Conference, and now he’s the best in the West.'
+]
+
+for (var i = 0; i < denver_text_start.length; i++) {
+  var midX = 450 + denver_games_idx[i] * 110
+
+  playoffsSvg
+    .append('text')
+    .attr('x', midX)
+    .attr('y', denver_text_start[i])
+    .text(denver_text_line_one[i])
+    .attr('font-size', 14)
+    .attr('text-anchor', 'middle')
+    .attr('fill', COLOR.LAKERS_YELLOW)
+
+  playoffsSvg
+    .append('text')
+    .attr('x', midX)
+    .attr('y', denver_text_start[i] + 18)
+    .text(denver_text_line_two[i])
+    .attr('font-size', 14)
+    .attr('text-anchor', 'middle')
+    .attr('fill', 'white')
+
+  var textwrap = d3
+    .textwrap()
+    .bounds({ width: blob_width, height: blob_height })
+  var textNode = playoffsSvg
+    .append('g')
+    .attr('class', 'playoffs-game-text')
+    .attr(
+      'transform',
+      'translate(' +
+        (midX - blob_width / 2 + 10) +
+        ', ' +
+        (denver_text_start[i] + 36) +
+        ')'
+    )
+    .append('text')
+    .text(denver_text_blob[i])
+
+  textNode.call(textwrap)
+}
+
+/* miami */
+var miami_text_start = miami_line_end.map(end => end + line_text_interval)
+var miami_text_line_one = [
+  'LAL 102 : 96 MIA',
+  'LAL 108 : 111 MIA',
+  'LAL 117 : 107 MIA'
+]
+var miami_text_line_two = ['Game 4', 'Game 5', 'Game 6']
+var miami_text_blob = [
+  "Anthony Davis' 3-pointer with 39.5s left finally settled matters and the Lakers beat Heat 102-96 in Game 4. 1 win away from the trophy.",
+  'James had 40 points, 13 rebounds and 7 assists for the Lakers.  They were 1 basket away from the title, but Green’s shot was a bit short.',
+  'No more drama. With a dominant final flourish, the Los Angeles Lakers won it all for the first time in a decade.'
+]
+
+for (var i = 0; i < miami_text_start.length; i++) {
+  var midX = 105 + miami_games_idx[i] * 100
+
+  playoffsSvg
+    .append('text')
+    .attr('x', midX)
+    .attr('y', miami_text_start[i])
+    .text(miami_text_line_one[i])
+    .attr('font-size', 14)
+    .attr('text-anchor', 'middle')
+    .attr('fill', COLOR.LAKERS_YELLOW)
+
+  playoffsSvg
+    .append('text')
+    .attr('x', midX)
+    .attr('y', miami_text_start[i] + 18)
+    .text(miami_text_line_two[i])
+    .attr('font-size', 14)
+    .attr('text-anchor', 'middle')
+    .attr('fill', 'white')
+
+  var textwrap = d3
+    .textwrap()
+    .bounds({ width: blob_width - 20, height: blob_height })
+  var textNode = playoffsSvg
+    .append('g')
+    .attr('class', 'playoffs-game-text')
+    .attr(
+      'transform',
+      'translate(' +
+        (midX - blob_width / 2 + 10) +
+        ', ' +
+        (miami_text_start[i] + 30) +
+        ')'
+    )
+    .append('text')
+    .text(miami_text_blob[i])
+
+  textNode.call(textwrap)
+}
