@@ -60,5 +60,18 @@ function init () {
     .onStepProgress(handleStepProgressOut)
 }
 
+new Waypoint({
+  element: document.getElementById("kobe-memory"),
+  handler: function (direction) {
+    if (direction === 'down') {
+      console.log('lalal')
+      document.getElementById("transition-circle-svg").style.position = 'relative';
+    } else {
+      document.getElementById("transition-circle-svg").style.position = 'fixed';
+    }
+  },
+  offset: 0
+})
+
 init()
 

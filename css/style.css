@@ -79,6 +79,17 @@ body {
   margin: 0 5px;
 }
 
+
+/* text visibility */
+.text-show {
+  opacity: 1 !important;
+}
+
+.text-hide {
+  opacity: 0.05;
+  transition: all 250ms ease-in;
+}
+
 /* axis */
 .axisLight line {
   stroke: var(--LIGHT_GREY);
@@ -470,3 +481,18 @@ a:visited {
 }
 
 /* end */
+
+.video-section {
+  visibility: hidden !important;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate("-50%", "-50%");
+  background-color: #202125;
+  opacity: 0.9;
+}
+
+.video-section.active {
+  visibility: visible !important;
+}

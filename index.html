@@ -396,6 +396,27 @@
       </div>
     </div>
 
+    <div class="video-section">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/hI_xVKX0VtM"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div>
+      <button onclick="toggle();"> click</button>
+    </div>
+
+    <script>
+      function toggle() {
+        console.log('clicked')
+        document.getElementsByClassName("video-section").item(0).classList.add("active")
+      }
+    </script>
+
     <div id="playoffs-rounds"></div>
 
     <div class="page" id="reference">
