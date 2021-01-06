@@ -320,7 +320,6 @@ playoffsSvg
 var portland_games_idx = [0, 3, 4]
 var portland_line_end = [130, 180, 350]
 
-////////// TEST ///////////////
 var portland_videos_links = [
   'https://www.youtube.com/embed/gHPubcpGkrk',
   'https://www.youtube.com/embed/n50qwytMPlQ',
@@ -467,6 +466,11 @@ playoffsSvg
 var houston_games_idx = [1, 4]
 var houston_line_end = [300 + 600, 200 + 600]
 
+var houston_videos_links = [
+  "https://www.youtube.com/embed/l0D95AzZZC4",
+  "https://www.youtube.com/embed/cINpXjiZiTk"
+]
+
 houston_games_idx.forEach((idx, i) => {
   var x = 60 + 110 * idx + 50
   var houston_game_line = [
@@ -488,7 +492,25 @@ houston_games_idx.forEach((idx, i) => {
     .attr('r', 16)
     .attr('stroke', 'white')
     .attr('stroke-width', 1)
-    .attr('fill', 'none')
+    .attr('fill', COLOR.BACKGROUND_DARK)
+    .attr('game', idx)
+    .on('mouseover', function () {
+      var gameId = d3.select(this).attr('game')
+      d3.select('.houston-button-' + gameId).attr('fill', 'white')
+    })
+    .on('mouseleave', function () {
+      var gameId = +d3.select(this).attr('game')
+      d3.select('.houston-button-' + gameId).attr('fill', 'none')
+    })
+    .on('click', function () {
+      document.getElementById('video-iframe').src = houston_videos_links[i]
+
+      document
+        .getElementsByClassName('video-section')
+        .item(0)
+        .classList.toggle('active')
+    })
+
 
   const houston_game_tri = [
     [x - 5, 16 + houston_line_end[i] + 8],
@@ -507,8 +529,23 @@ houston_games_idx.forEach((idx, i) => {
         .x(d => d[0])
         .y(d => d[1])
     )
+    .attr('class', 'houston-button-' + idx)
     .attr('fill', 'none')
     .attr('stroke', 'white')
+    .on('mouseover', function () {
+      d3.select(this).attr('fill', 'white')
+    })
+    .on('mouseleave', function () {
+      d3.select(this).attr('fill', 'none')
+    })
+    .on('click', function () {
+      document.getElementById('video-iframe').src = houston_videos_links[i]
+
+      document
+        .getElementsByClassName('video-section')
+        .item(0)
+        .classList.toggle('active')
+    })
 })
 
 /* denver */
@@ -547,6 +584,11 @@ playoffsSvg
 var denver_games_idx = [1, 4]
 var denver_line_end = [180 + 1200, 200 + 1200]
 
+var denver_videos_links = [
+  "https://www.youtube.com/embed/sFrrbM4Q3T4",
+  "https://www.youtube.com/embed/DSIDOgR5O5g"
+]
+
 denver_games_idx.forEach((idx, i) => {
   var x = 400 + 110 * idx + 50
   var denver_game_line = [
@@ -568,7 +610,24 @@ denver_games_idx.forEach((idx, i) => {
     .attr('r', 16)
     .attr('stroke', 'white')
     .attr('stroke-width', 1)
-    .attr('fill', 'none')
+    .attr('fill', COLOR.BACKGROUND_DARK)
+    .attr('game', idx)
+    .on('mouseover', function () {
+      var gameId = d3.select(this).attr('game')
+      d3.select('.denver-button-' + gameId).attr('fill', 'white')
+    })
+    .on('mouseleave', function () {
+      var gameId = +d3.select(this).attr('game')
+      d3.select('.denver-button-' + gameId).attr('fill', 'none')
+    })
+    .on('click', function () {
+      document.getElementById('video-iframe').src = denver_videos_links[i]
+
+      document
+        .getElementsByClassName('video-section')
+        .item(0)
+        .classList.toggle('active')
+    })
 
   const denver_game_tri = [
     [x - 5, 16 + denver_line_end[i] + 8],
@@ -589,6 +648,21 @@ denver_games_idx.forEach((idx, i) => {
     )
     .attr('fill', 'none')
     .attr('stroke', 'white')
+    .attr('class', 'denver-button-' + idx)
+    .on('mouseover', function () {
+      d3.select(this).attr('fill', 'white')
+    })
+    .on('mouseleave', function () {
+      d3.select(this).attr('fill', 'none')
+    })
+    .on('click', function () {
+      document.getElementById('video-iframe').src = denver_videos_links[i]
+
+      document
+        .getElementsByClassName('video-section')
+        .item(0)
+        .classList.toggle('active')
+    })
 })
 
 /* miami */
@@ -627,6 +701,12 @@ playoffsSvg
 var miami_games_idx = [3, 4, 5]
 var miami_line_end = [140 + 1800, 330 + 1800, 160 + 1800]
 
+var miami_videos_links = [
+  "https://www.youtube.com/embed/Bh90U367Ivc",
+  "https://www.youtube.com/embed/1S1cXaqkIRQ",
+  "https://www.youtube.com/embed/czq7usfGiZY"
+]
+
 miami_games_idx.forEach((idx, i) => {
   var x = 60 + 100 * idx + 45
   var miami_game_line = [
@@ -648,7 +728,24 @@ miami_games_idx.forEach((idx, i) => {
     .attr('r', 20)
     .attr('stroke', 'white')
     .attr('stroke-width', 1)
-    .attr('fill', 'none')
+    .attr('fill', COLOR.BACKGROUND_DARK)
+    .attr('game', idx)
+    .on('mouseover', function () {
+      var gameId = d3.select(this).attr('game')
+      d3.select('.miami-button-' + gameId).attr('fill', 'white')
+    })
+    .on('mouseleave', function () {
+      var gameId = +d3.select(this).attr('game')
+      d3.select('.miami-button-' + gameId).attr('fill', 'none')
+    })
+    .on('click', function () {
+      document.getElementById('video-iframe').src = miami_videos_links[i]
+
+      document
+        .getElementsByClassName('video-section')
+        .item(0)
+        .classList.toggle('active')
+    })
 
   const miami_game_tri = [
     [x - 7, 20 + miami_line_end[i] + 10],
@@ -669,12 +766,27 @@ miami_games_idx.forEach((idx, i) => {
     )
     .attr('fill', 'none')
     .attr('stroke', 'white')
+    .attr('class', 'miami-button-' + idx)
+    .on('mouseover', function () {
+      d3.select(this).attr('fill', 'white')
+    })
+    .on('mouseleave', function () {
+      d3.select(this).attr('fill', 'none')
+    })
+    .on('click', function () {
+      document.getElementById('video-iframe').src = miami_videos_links[i]
+
+      document
+        .getElementsByClassName('video-section')
+        .item(0)
+        .classList.toggle('active')
+    })
 })
 
 // append text description
 var line_text_interval = 65
 var blob_width = 180
-var blob_height = 800
+var blob_height = 400
 
 /* portland */
 
