@@ -67,7 +67,7 @@ body {
 /* three-dots divider */
 .three-dots {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 80px;
   margin-bottom: 10px;
 }
 
@@ -462,7 +462,7 @@ body {
 #playoffs-rounds {
   position: relative;
   width: 100%;
-  height: 600%;
+  height: 560%;
   overflow: hidden;
 
   background: #202125;
@@ -521,8 +521,6 @@ a:visited {
   color: var(--DARK_GREY);
 }
 
-/* end */
-
 .video-annotation text tspan {
   font-size: 10px;
   font-family: 'Caveat'
@@ -557,3 +555,5 @@ a:visited {
   filter: invert(1);
   cursor: pointer;
 }
+
+/* end */

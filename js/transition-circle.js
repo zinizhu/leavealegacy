@@ -10,7 +10,6 @@ d3
   .append('g')
   .attr('x', window.innerWidth)
   .attr('y', window.innerHeight)
-  // .attr('transform', 'translate(' + widthOffset + ', ' + heightOffset + ')')
   .append('circle')
   .attr('class', 'timeline-bg-circle')
   .attr('id', 'timeline-bg-circle')
@@ -41,7 +40,6 @@ function init () {
     .setup({
       step: '#lakers-champ-timeline',
       progress: true,
-      // debug: true,
       offset: 0
     })
     .onStepProgress(handleStepProgress)
@@ -50,7 +48,6 @@ function init () {
     .setup({
       step: '#new-team-intro',
       progress: true,
-      // debug: true,
       offset: 0.8
     })
     .onStepProgress(handleStepProgressOut)
