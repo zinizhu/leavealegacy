@@ -724,8 +724,8 @@ miami_games_idx.forEach((idx, i) => {
   playoffsSvg
     .append('circle')
     .attr('cx', x)
-    .attr('cy', 20 + miami_line_end[i])
-    .attr('r', 20)
+    .attr('cy', 16 + miami_line_end[i])
+    .attr('r', 16)
     .attr('stroke', 'white')
     .attr('stroke-width', 1)
     .attr('fill', COLOR.BACKGROUND_DARK)
@@ -748,10 +748,10 @@ miami_games_idx.forEach((idx, i) => {
     })
 
   const miami_game_tri = [
-    [x - 7, 20 + miami_line_end[i] + 10],
-    [x - 7, 20 + miami_line_end[i] - 10],
-    [x + 10, 20 + miami_line_end[i]],
-    [x - 7, 20 + miami_line_end[i] + 10]
+    [x - 5, 16 + miami_line_end[i] + 8],
+    [x - 5, 16 + miami_line_end[i] - 8],
+    [x + 8, 16 + miami_line_end[i]],
+    [x - 5, 16 + miami_line_end[i] + 8]
   ]
 
   playoffsSvg
