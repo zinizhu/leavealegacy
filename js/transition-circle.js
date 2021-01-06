@@ -8,28 +8,26 @@ var heightOffset = window.innerHeight / 2
 d3
   .select("#transition-circle-svg")
   .append('g')
-  .attr('transform', 'translate(' + widthOffset + ', ' + heightOffset + ')')
+  .attr('x', window.innerWidth)
+  .attr('y', window.innerHeight)
+  // .attr('transform', 'translate(' + widthOffset + ', ' + heightOffset + ')')
   .append('circle')
   .attr('class', 'timeline-bg-circle')
   .attr('id', 'timeline-bg-circle')
-  .attr('cx', 0)
-  .attr('cy', 0)
+  .attr('cx', window.outerWidth / 2)
+  .attr('cy', window.innerHeight / 2)
   .attr('r', 0)
-  .attr('z-index', 1)
-  .attr('fill', COLOR.DARK_GREY)
-  .attr('position', 'fixed')
+  .attr('z-index', 100)
+  .attr('fill', COLOR.BACKGROUND_DARK)
 
 function handleStepProgress (response) {
-  // console.log(response)
-  var radius = window.outerWidth * response.progress
-  // console.log(radius)
+  var radius = window.innerWidth * response.progress
   d3.select('#timeline-bg-circle').attr('r', radius)
 }
 
 function handleStepProgressOut (response) {
-  console.log(response)
-  var radius = window.outerWidth * (1 - response.progress)
-  console.log(radius)
+
+  var radius = window.innerWidth * (1 - response.progress)
   d3.select('#timeline-bg-circle').attr('r', radius)
   if (response.progress === 1) {
     d3.select('#timeline-bg-circle').attr('display', 'none')
@@ -37,8 +35,6 @@ function handleStepProgressOut (response) {
     d3.select('#timeline-bg-circle').attr('display', 'block')
   }
 }
-
-console.log('size', window.outerWidth)
 
 function init () {
   scrollerIn
@@ -61,7 +57,7 @@ function init () {
 }
 
 new Waypoint({
-  element: document.getElementById("kobe-memory"),
+  element: document.getElementById("regular-season"),
   handler: function (direction) {
     if (direction === 'down') {
       console.log('lalal')

@@ -1,5 +1,5 @@
 var record_margin = { top: 80, bottom: 50, left: 80, right: 83 }
-var record_width = 800
+var record_width = 900
 var record_height = 400
 
 var record_svg = d3
@@ -27,8 +27,6 @@ d3.csv("./files/prev_records.csv", (data) => {
     seasons.push(row.season)
     row.rank = +row.rank
   })
-
-  console.log(data, seasons)
 
   // scale
   var x = d3.scaleLinear()
@@ -66,8 +64,10 @@ d3.csv("./files/prev_records.csv", (data) => {
       .attr('y', d => y(d + 1) - 8)
       .attr('width', 80)
       .attr('height', 16)
+      // .attr('stroke', (d, r) => r === 7 ? COLOR.RED : COLOR.LIGHT_GREY)
       .attr('stroke', COLOR.LIGHT_GREY)
-      .attr('fill', 'none')
+      .attr('fill', (d, r) => r === 7 ? 'rgba(255,255,255,0.2)' : 'none')
+      // .attr('fill', 'none')
 
       d3.select('.records-rank-rect-' + i + '-' + (data[i].rank - 1))
       .attr('fill', COLOR.LAKERS_YELLOW)
@@ -78,9 +78,9 @@ d3.csv("./files/prev_records.csv", (data) => {
   record_svg
   .append('text')
   .attr('x', record_width / 2)
-  .attr('y', -10)
+  .attr('y', -20)
   .text("Lakers Regular Season Ranking in West Conference 2011-2018")
-  .attr('font-size', '26px')
+  .attr('font-size', '30px')
   .attr('fill', COLOR.LIGHT_GREY)
   .attr('text-anchor', 'middle')
 

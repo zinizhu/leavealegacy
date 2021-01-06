@@ -1,7 +1,7 @@
 // define margin and svg size
-var margin = { top: 150, bottom: 200, left: 150, right: 220 }
-var width = 1250
-var height = 400
+var margin = { top: 200, bottom: 200, left: 150, right: 220 }
+var width = 1350
+var height = 450
 
 // create svg
 var svg = d3
@@ -29,8 +29,6 @@ d3.csv('./files/lakers_champ.csv', data => {
     .scaleLinear()
     .domain([
       1948,
-      // d3.min(data, d => d['YEARAWARDED']),
-      // d3.max(data, d => d['YEARAWARDED'])
       2011
     ])
     .range([0, width])

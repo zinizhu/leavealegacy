@@ -68,6 +68,39 @@ for (var i = 0; i < 4; i++) {
     .attr('font-size', 20)
 }
 
+// titles
+playoffsSvg
+.append('text')
+.attr('x', 350)
+.attr('y', 55)
+.text("West Conference - 1st Round")
+.attr('fill', 'white')
+.attr('font-size', 28)
+
+playoffsSvg
+.append('text')
+.attr('x', 60)
+.attr('y', 655)
+.text("West Conference - Semi-finals")
+.attr('fill', 'white')
+.attr('font-size', 28)
+
+playoffsSvg
+.append('text')
+.attr('x', 400)
+.attr('y', 1255)
+.text("West Conference - Finals")
+.attr('fill', 'white')
+.attr('font-size', 28)
+
+playoffsSvg
+.append('text')
+.attr('x', 60)
+.attr('y', 1855)
+.text("NBA Finals")
+.attr('fill', 'white')
+.attr('font-size', 28)
+
 // draw curves
 
 const playoffs_curve_scale = d3.line().curve(d3.curveNatural)

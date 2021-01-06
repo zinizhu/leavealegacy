@@ -1,6 +1,6 @@
-var draft_margin = { top: 80, bottom: 50, left: 50, right: 50 }
-var draft_width = 800
-var draft_height = 450
+var draft_margin = { top: 100, bottom: 50, left: 60, right: 50 }
+var draft_width = 900
+var draft_height = 500
 
 var draft_svg = d3
   .select('#draft-graph')
@@ -89,7 +89,7 @@ d3.csv("./files/draft_picks.csv", (data) => {
     .attr('x', draft_width / 2)
     .attr('y', -60)
     .text("Lakers Best Draft Picks 2011-2018")
-    .attr('font-size', '26px')
+    .attr('font-size', '30px')
     .attr('fill', COLOR.LIGHT_GREY)
     .attr('text-anchor', 'middle')
 

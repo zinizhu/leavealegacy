@@ -8,9 +8,36 @@ var games = [
   { id: '0021900074', fill: '#FDB927' },
   { id: '0021900342', fill: '#FDB927' },
   { id: '0021900390', fill: '#FDB927' },
-  { id: '0021900684', fill: '#787878' },
+  { id: '0021900684', fill: '#202125' },
   { id: '0021900948', fill: '#FDB927' }
 ]
+
+// new Waypoint({
+//   element: pageElements.item(pageElements.length - 1),
+//   handler: function (direction) {
+//     if (direction === 'down') {
+//       this.element.classList.remove('text-show')
+//     } else {
+//     this.element.classList.add('text-show')
+//     }
+//   },
+//   offset: '30%'
+// })
+
+
+new Waypoint({
+  element: pageElements.item(pageElements.length - 1),
+  handler: function (direction) {
+    if (direction === 'down') {
+      regularSeasonLogsEl.classList.remove('fixed')
+      regularSeasonLogsEl.classList.add('is-bottom')
+    } else {
+      regularSeasonLogsEl.classList.add('fixed')
+      regularSeasonLogsEl.classList.remove('is-bottom')
+    }
+  },
+  offset: '-35%'
+})
 
 for (var i = 0, length = pageElements.length; i < length; i++) {
   new Waypoint({
@@ -46,7 +73,7 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
         }
       }
     },
-    offset: "60%"
+    offset: "70%"
   })
 
   new Waypoint({
@@ -59,9 +86,8 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
         d3.selectAll(annonationClass).style('display', 'none')
 
         if (order === pageElements.length - 1) {
-          console.log('yoho')
-          regularSeasonLogsEl.classList.remove('fixed')
-          regularSeasonLogsEl.classList.add('is-bottom')
+          // regularSeasonLogsEl.classList.remove('fixed')
+          // regularSeasonLogsEl.classList.add('is-bottom')
 
           var rectClass = '.season-log-' + games[order].id
           d3.selectAll(rectClass).style('fill', games[order].fill)
@@ -73,8 +99,8 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
         var annonationClass = '.annotation-' + (order)
         d3.selectAll(annonationClass).style('display', 'block')
         if (order === pageElements.length - 1) {
-          regularSeasonLogsEl.classList.add('fixed')
-          regularSeasonLogsEl.classList.remove('is-bottom')
+          // regularSeasonLogsEl.classList.add('fixed')
+          // regularSeasonLogsEl.classList.remove('is-bottom')
           var rectClass = '.season-log-' + games[order].id
           d3.selectAll(rectClass).style('fill', 'red')
           var annonationClass = '.annotation-' + (order)
@@ -84,11 +110,13 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
     },
     offset: function () {
       var order = +this.element.getAttribute('order')
-      if (order === pageElements.length - 1) {
-        return -this.element.clientHeight * 0.8
-      } else {
-        return this.element.clientHeight * 0.2
-      }
+      // if (order === pageElements.length - 1) {
+      //   return -this.element.clientHeight * 0.8
+      // } else {
+      //   return this.element.clientHeight * 0.2
+      // }
+      return this.element.clientHeight * 0.3
+
     }
   })
 }
@@ -102,5 +130,5 @@ new Waypoint({
       regularSeasonLogsEl.classList.remove('fixed')
     }
   },
-  offset: 0
+  // offset: 500
 })

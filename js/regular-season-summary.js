@@ -154,7 +154,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
             d3
               .forceCollide()
               .strength(0.5)
-              .radius(30)
+              .radius(40)
               .iterations(1)
           )
           .alphaTarget(0.1)
@@ -163,7 +163,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         regularSeasonSummaryGraphContainerEl.classList.remove('is-fixed')
       }
     },
-    offset: "50%"
+    offset: '50%'
   })
 
   // // step 2 simulation
@@ -178,15 +178,23 @@ d3.csv('./files/lakers_game_logs.csv', data => {
             'x',
             d3
               .forceX()
-              .strength(0.05)
+              .strength(0.15)
               .x(d => x(d.WL))
           )
           .force(
             'y',
             d3
               .forceY()
-              .strength(0.05)
+              .strength(0.15)
               .y(regular_season_summary_height / 2)
+          )
+          .force(
+            'collide',
+            d3
+              .forceCollide()
+              .strength(0.15)
+              .radius(40)
+              .iterations(1)
           )
           .alphaTarget(0.5)
           .restart()
@@ -211,7 +219,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
           .restart()
       }
     },
-    offset: "50%"
+    offset: '50%'
   })
 
   // step 3 simulation
@@ -272,7 +280,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
           .restart()
       }
     },
-    offset: "90%"
+    offset: '90%'
   })
 
   new Waypoint({
@@ -290,7 +298,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
           .style('fill', COLOR.LAKERS_YELLOW)
       }
     },
-    offset: "30%"
+    offset: '30%'
   })
 
   // step 4 animation
@@ -319,7 +327,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
           .style('fill', 'red')
       }
     },
-    offset: "90%"
+    offset: '90%'
   })
 
   // hard code "1"
@@ -410,7 +418,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         }
       }
     },
-    offset: "50%"
+    offset: '50%'
   })
 
   new Waypoint({
@@ -424,7 +432,6 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         regularSeasonSummaryGraphContainerEl.classList.remove('is-bottom')
       }
     },
-    offset: "20%"
+    offset: '20%'
   })
-  
 })

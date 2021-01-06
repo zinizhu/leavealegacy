@@ -5,7 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+    <link
+      href="https://fonts.googleapis.com/css?family=Caveat"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -25,7 +28,9 @@
       </div>
     </div>
 
-    <svg id="transition-circle-svg"></svg>
+    <div class="page">
+      <svg id="transition-circle-svg"></svg>
+    </div>
 
     <div class="page" id="the-giant">
       <div class="three-dots">
@@ -61,9 +66,9 @@
         </div>
         <div>
           <p>
-            The Lakers’ trajectory was completely changed starting from 2013,
-            when their superstar Kobe Bryant went down with a torn Achilles.
-            They quickly fell from a championship competitor to a lottery team.
+            The Lakers’ trajectory was completely changed in 2013, when their
+            superstar Kobe Bryant went down with a torn Achilles. They quickly
+            fell from a championship competitor to a lottery team.
           </p>
         </div>
 
@@ -138,16 +143,12 @@
       <div>
         <p>
           Due to the Covid-19 plague, the Lakers only played 71 games in this
-          regular season, and with the 52-19 records, the Lakers ranked 1st in
-          the West Conference. Lebron and Anthony Davis found the way to play
-          with momentum and make the Lakers one of the greatest teams in the
-          league. Frank Vogel’s arrival made the Lakers a strong defensive team.
-          The team ranked 4 in PTS allow and 2nd in REB allow. They get the 2nd
-          most defensive rebounds and gave the most blocks per game. Their
-          offensive rankings are not as good, though. Lakers’ cursed 3-pt
-          shooting still didn’t get much better this year, even they signed a
-          few good shooters. Their 3PT% was ranked 21th and their FT% was ranked
-          29th - which could be a big issue in the playoffs.
+          regular season. With a 52-19 records, Lakers ranked 1st in the West
+          Conference. The team ranked 4 in PTS allow and 2nd in REB allow. They
+          ranked 2nd for defensive rebounds and sent the most blocks per game.
+          Their offensive rankings were not as good, though. Lakers’ cursed 3-pt
+          shooting didn’t get much better this year, with 3FG% ranked 21th and
+          FT% ranked 29th - which could be a big issue in the playoffs.
         </p>
       </div>
 
@@ -155,7 +156,7 @@
 
       <div id="regular-season-log-story">
         <div id="regular-season-log-story-sections">
-          <div class="step text-hide" order="0">
+          <section class="step text-hide" order="0">
             <div class="section-title">
               <h3>Dwight Howard Proved It</h3>
               <p><small>LAL 120 : 101 CHA, &nbsp; 2019/10/27</small></p>
@@ -180,7 +181,7 @@
                 in only 22 minutes of play.
               </p>
             </div>
-          </div>
+          </section>
           <section class="step text-hide" order="1">
             <div class="section-title">
               <h3>AD Made History with 40/20 against The Grizzlies</h3>
@@ -397,8 +398,12 @@
       </div>
     </div>
 
-    <div class="video-section">
-      <img src="files/cancel.svg" class="close-video" onclick="close_video_event();">
+    <div class="page video-section">
+      <img
+        src="files/cancel.svg"
+        class="close-video"
+        onclick="close_video_event();"
+      />
       <iframe
         id="video-iframe"
         width="853"
