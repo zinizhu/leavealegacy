@@ -12,19 +12,6 @@ var games = [
   { id: '0021900948', fill: '#FDB927' }
 ]
 
-// new Waypoint({
-//   element: pageElements.item(pageElements.length - 1),
-//   handler: function (direction) {
-//     if (direction === 'down') {
-//       this.element.classList.remove('text-show')
-//     } else {
-//     this.element.classList.add('text-show')
-//     }
-//   },
-//   offset: '30%'
-// })
-
-
 new Waypoint({
   element: pageElements.item(pageElements.length - 1),
   handler: function (direction) {
@@ -115,7 +102,7 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
       // } else {
       //   return this.element.clientHeight * 0.2
       // }
-      return this.element.clientHeight * 0.3
+      return this.element.clientHeight * 0.25
 
     }
   })

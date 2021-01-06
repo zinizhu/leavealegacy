@@ -36,7 +36,7 @@ var regularSeasonSummarySvg = d3
 
 // read data
 d3.csv('./files/lakers_game_logs.csv', data => {
-  // console.log(data)
+
 
   var stats = []
   var winGames = []
@@ -80,7 +80,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
     .attr('r', 20)
     .style('fill', d => (d.WL === 'W' ? COLOR.LAKERS_YELLOW : 'none'))
     .attr('stroke', COLOR.LIGHT_GREY)
-    .style('stroke-width', 3)
+    .style('stroke-width', 2)
 
   // simulation and animation
   var regularSeasonSummarySectionEl = document
@@ -96,7 +96,12 @@ d3.csv('./files/lakers_game_logs.csv', data => {
   var x = d3
     .scaleOrdinal()
     .domain(['W', 'L'])
-    .range([0, 400])
+    .range([0, 450])
+
+  var radius = d3
+      .scaleOrdinal()
+  .domain(['W', 'L'])
+  .range([75, 30])
 
   var x1 = d3
     .scaleOrdinal()
@@ -193,7 +198,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
             d3
               .forceCollide()
               .strength(0.15)
-              .radius(40)
+              .radius(d => radius(d.WL))
               .iterations(1)
           )
           .alphaTarget(0.5)
