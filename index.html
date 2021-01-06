@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -397,25 +398,17 @@
     </div>
 
     <div class="video-section">
+      <img src="files/cancel.svg" class="close-video"/ onclick="close_video_event();">
       <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/hI_xVKX0VtM"
+        id="video-iframe"
+        width="853"
+        height="480"
+        src=''
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </div>
-    <div>
-      <button onclick="toggle();"> click</button>
-    </div>
-
-    <script>
-      function toggle() {
-        console.log('clicked')
-        document.getElementsByClassName("video-section").item(0).classList.add("active")
-      }
-    </script>
 
     <div id="playoffs-rounds"></div>
 

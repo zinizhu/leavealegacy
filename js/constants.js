@@ -12,4 +12,5 @@ const COLOR = {
   GREEN: '#2fa62b',
   BLUE: '#276bfd',
   BACKGROUND_LIGHT: '#F6F6F5',
+  BACKGROUND_DARK: '#202125',
 }

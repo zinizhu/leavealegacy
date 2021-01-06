@@ -1,6 +1,16 @@
 var playoffs_width = 1000
 var playoffs_height = 600
 
+/* close video button */
+function close_video_event () {
+  document.getElementById('video-iframe').src = ''
+
+  document
+    .getElementsByClassName('video-section')
+    .item(0)
+    .classList.toggle('active')
+}
+
 // create svg
 var playoffsSvg = d3
   .select('#playoffs-rounds')
@@ -310,6 +320,13 @@ playoffsSvg
 var portland_games_idx = [0, 3, 4]
 var portland_line_end = [130, 180, 350]
 
+////////// TEST ///////////////
+var portland_videos_links = [
+  'https://www.youtube.com/embed/gHPubcpGkrk',
+  'https://www.youtube.com/embed/n50qwytMPlQ',
+  'https://www.youtube.com/embed/KZV3TuxFXpk'
+]
+
 portland_games_idx.forEach((idx, i) => {
   var x = 350 + 110 * idx + 50
   var portland_game_line = [
@@ -331,7 +348,24 @@ portland_games_idx.forEach((idx, i) => {
     .attr('r', 16)
     .attr('stroke', 'white')
     .attr('stroke-width', 1)
-    .attr('fill', 'none')
+    .attr('game', idx)
+    .attr('fill', COLOR.BACKGROUND_DARK)
+    .on('mouseover', function () {
+      var gameId = d3.select(this).attr('game')
+      d3.select('.portland-button-' + gameId).attr('fill', 'white')
+    })
+    .on('mouseleave', function () {
+      var gameId = +d3.select(this).attr('game')
+      d3.select('.portland-button-' + gameId).attr('fill', 'none')
+    })
+    .on('click', function () {
+      document.getElementById('video-iframe').src = portland_videos_links[i]
+
+      document
+        .getElementsByClassName('video-section')
+        .item(0)
+        .classList.toggle('active')
+    })
 
   const portland_game_tri = [
     [x - 6, 16 + portland_line_end[i] + 8],
@@ -350,9 +384,52 @@ portland_games_idx.forEach((idx, i) => {
         .x(d => d[0])
         .y(d => d[1])
     )
+    .attr('class', 'portland-button-' + idx)
     .attr('fill', 'none')
     .attr('stroke', 'white')
+    .on('mouseover', function () {
+      d3.select(this).attr('fill', 'white')
+    })
+    .on('mouseleave', function () {
+      d3.select(this).attr('fill', 'none')
+    })
+    .on('click', function () {
+      document.getElementById('video-iframe').src = portland_videos_links[i]
+      document
+        .getElementsByClassName('video-section')
+        .item(0)
+        .classList.toggle('active')
+    })
 })
+
+// add annotation to play the video
+
+playoffsSvg
+  .append('text')
+  .attr('x', 300)
+  .attr('y', 120)
+  .text('click to watch game highlights')
+  .attr('font-family', 'Caveat')
+  .attr('font-size', 12)
+  .attr('fill', COLOR.LIGHT_GREY)
+  .attr('text-anchor', 'middle')
+
+const video_annotation_curve = [
+  [320, 126],
+  [325, 130],
+  [330, 134],
+  [350, 145],
+  [370, 147],
+  [376, 147]
+]
+
+playoffsSvg
+  .append('path')
+  .attr('d', playoffs_curve_scale(video_annotation_curve))
+  .attr('stroke', 'white')
+  .attr('stroke-width', 0.5)
+  .attr('fill', 'none')
+  .style('stroke-dasharray', '2, 1')
 
 /* houston */
 const houston_parallelograms = []
