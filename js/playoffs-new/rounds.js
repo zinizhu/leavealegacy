@@ -311,9 +311,9 @@ playoffsSvg
 playoffsSvg
   .append('line')
   .attr('x1', 200)
-  .attr('y1', 2910)
+  .attr('y1', 2880)
   .attr('x2', 800)
-  .attr('y2', 2910)
+  .attr('y2', 2880)
   .attr('stroke', 'white')
   .attr('stroke-width', 1)
 
