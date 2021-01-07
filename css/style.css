@@ -10,8 +10,8 @@
   --RED: #fd2727;
   --GREEN: #2fa62b;
   --BLUE: #276bfd;
-  /* --BACKGROUND: #f6f6f5; */
-  --BACKGROUND: #f6f6e5;
+  --BACKGROUND: #f6f6f5;
+  /* --BACKGROUND: #f6f6e5; */
 }
 
 @font-face {
@@ -108,6 +108,15 @@ body {
 
 .axisRecord text {
   font-size: 18px;
+}
+
+.new-team-axis path{
+  display: none;
+  stroke: var(--LIGHT_GREY);
+}
+
+.new-team-axis line{
+  stroke: var(--LIGHT_GREY);
 }
 
 /* cover page */
@@ -227,19 +236,6 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
-/* #misery-bg {
-  position: absolute;
-  z-index: 950;
-  top: 45%;
-  bottom: -55%;
-  left: 0;
-  right: 0;
-  background: url('../files/images/kobe-injury-cover.jpg') no-repeat center
-    center / cover;
-  opacity: 0.12;
-  visibility: hidden;
-} */
-
 .misery-graph-container.is-fixed {
   position: fixed;
 }
@@ -262,6 +258,7 @@ body {
 #new-team {
   background-color: var(--BACKGROUND);
   z-index: 2;
+  margin-bottom: 200px;
 }
 
 /* Regular Season */
@@ -274,6 +271,11 @@ body {
   position: absolute;
   left: 0;
   right: 0;
+}
+
+.annotation-connector path{
+  fill: var(--LAKERS_YELLOW);
+  stroke: var(--LAKERS_YELLOW);
 }
 
 .lakers-season-logs-class svg {
@@ -566,4 +568,331 @@ a:visited {
   cursor: pointer;
 }
 
-/* end */
+/* the new team */
+/* #new-team-intro{
+  display: grid;
+  margin: 200px 200px 200px 200px;
+  grid-template-columns: 450px 940px 450px;
+  grid-template-rows: 200px 200px 300px 200px; 
+  gap: 50px;
+  height:100% 
+  
+} */
+
+/* #section-title {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 50px;
+  font-size: 50px;
+  
+} */
+
+/* #intro-text{
+  grid-column: 2;
+  grid-row: 3/5;
+
+} */
+
+#intro-text p{
+  margin:0px 0px 0px 20px;
+  font-size: 30px ;
+  text-align: left;
+  line-height: 125%;
+}
+
+
+/* other team player page */
+.wrapper-other-player{
+  display: grid;
+  margin: 50px 150px 50px 250px;
+  grid-template-columns: 230px repeat(3, 420px) 230px;
+  grid-template-rows: 150px repeat(4, 220px); 
+  gap: 50px;
+  height:100% 
+}
+
+#other-player-intro {
+  grid-column: 1/6;
+  grid-row: 1;
+  object-fit: cover;
+  font-size: 60px;
+  text-align: center;
+}
+
+#vogel-box{
+  grid-column: 2;
+  grid-row: 2/4;
+  margin: 0px;
+  object-fit: cover;
+  box-shadow:  1px 2px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+#rondo-box{
+  grid-column: 3;
+  grid-row: 2/4;
+  margin: 0px;
+  object-fit: cover;
+  box-shadow:  1px 2px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+#howard-box{
+  grid-column: 4;
+  grid-row: 2/4;
+  margin: 0px;
+  object-fit: cover;
+  box-shadow:  1px 2px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+#kcp-box{
+  grid-column: 2;
+  grid-row: 4/6;
+  margin: 0px;
+  object-fit: cover;
+  box-shadow:  1px 2px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+#kuzma-box{
+  grid-column: 3;
+  grid-row: 4/6;
+  margin: 0px;
+  object-fit: cover;
+  box-shadow:  1px 2px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+#caruso-box{
+  grid-column: 4;
+  grid-row: 4/6;
+  margin: 0px;
+  object-fit: cover;
+  box-shadow:  1px 2px 6px 2px rgba(0, 0, 0, 0.5);
+}
+
+.other-player-format{
+  text-align: left;
+  font-size: 32px ;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right:5px;
+}
+
+#kcp-format{
+  text-align:left;
+  font-size: 32px ;
+  padding-left: 20px;
+  padding-right:5px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.other-player-text-format:not(.exclude){
+  text-align: left;
+  width: 90%;
+  font-size: 20px ;
+  margin-top:20px;
+  margin-right: 30px;
+  padding-left: 20px;
+  padding-right:10px;
+  line-height: 120%;
+}
+
+#new-team {
+  background-color: var(--BACKGROUND);
+}
+
+/* the new team page */
+
+.performance-title {
+  font-size: 120px;
+  color: #9D0000;
+  text-align: left;
+}
+
+
+.performance-Text {
+  font-size: 30px ;
+  text-align: left;
+}
+
+
+.ad-wrapper{
+  display: grid;
+  margin: 200px 150px 200px 250px;
+  grid-template-columns: 180px 420px 420px 550px 130px;
+  grid-template-rows: 380px 300px 300px; 
+  gap: 50px;
+  height:100% 
+}
+
+#ad-box-1{
+  grid-column: 4;
+  grid-row: 1/4;
+  margin: 0px;
+  object-fit: fill;
+}
+
+#ad-box-1>img{
+  margin-top: 50px;
+  margin-left:20px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+#ad-box-2{
+  grid-column:2/4 ;
+  grid-row: 1;
+  margin-top: 30px;
+}
+
+#ad-box-2 p{
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 125px;
+  margin-right:0px;
+  line-height: 125%;
+}
+
+#ad-box-3{
+  grid-column: 2  ;
+  grid-row: 2;
+  margin-left:30px;
+  margin-top: 0px;
+}
+
+#ad-box-4{
+  grid-column: 3;
+  grid-row: 2;
+  margin-left:30px;
+  margin-top: 0px;
+}
+
+#ad-box-4 >*{
+  object-fit: cover
+}
+
+#ad-box-5{
+  grid-column: 2  ;
+  grid-row: 3;
+  margin-left:30px;
+  margin-bottom: 80px;
+}
+
+#ad-box-5 >*{
+  object-fit: cover
+}
+
+#ad-box-6{
+  grid-column: 3;
+  grid-row: 3;
+  margin-left:30px;
+  margin-bottom: 80px;
+}
+
+#ad-box-6 >*{
+  object-fit: cover
+}
+
+/* LB section */
+.lb-wrapper{
+  display: grid;
+  margin: 200px 150px 200px 250px;
+  grid-template-columns: 120px 630px 420px 420px 110px;
+  grid-template-rows: 380px 300px 300px; 
+  gap: 50px;
+  height:100% 
+}
+
+.lb-wrapper > div {
+  
+  text-align: left
+}
+
+#lb-performance-title {
+  font-size: 100px;
+  color: #9D0000;
+  text-align: left;
+  margin-left: 30px;
+}
+
+#lb-box-1{
+  grid-column: 2;
+  grid-row: 1/4;
+  margin: 0px;
+  object-fit: cover;
+  
+}
+
+#lb-box-1>img{
+  margin-top: 0px;
+  border-radius: 10px;
+  width: 110%;
+}
+
+#lb-box-2{
+  grid-column: 3/5;
+  grid-row: 1;
+  padding-top: 100px;
+}
+
+#lb-box-2 p{
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-right:0px;
+  line-height: 125%;
+  font-size: 30px;
+  width: 100%;
+}
+
+#ad-box-2 p{
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 50px;
+  margin-right:0px;
+  line-height: 125%;
+  font-size: 30px;
+  width: 100%;
+}
+
+#lb-box-3{
+  margin-left:30px;
+  margin-top: 30px;
+  grid-column: 3;
+  grid-row:2;
+  
+}
+#lb-box-3 >*{
+  object-fit: cover
+}
+
+#lb-box-4{
+  margin-left:30px;
+  margin-top: 30px;
+  grid-column: 4;
+  grid-row: 2;
+ 
+}
+
+#lb-box-4 >*{
+  object-fit: cover
+}
+
+#lb-box-5{
+  margin-left:30px;
+  margin-bottom: 50px;
+  grid-column:3 ;
+  grid-row: 3;
+}
+
+#lb-box-6{
+  margin-left:30px;
+  margin-bottom: 50px;
+  grid-column: 4;
+  grid-row: 3;
+}
+
+#lb-box-6 >*{
+  object-fit: cover
+}
+
+

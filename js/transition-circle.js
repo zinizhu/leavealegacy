@@ -54,7 +54,7 @@ function init () {
 }
 
 new Waypoint({
-  element: document.getElementById("regular-season"),
+  element: document.getElementById("new-team"),
   handler: function (direction) {
     if (direction === 'down') {
       console.log('lalal')

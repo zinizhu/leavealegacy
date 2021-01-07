@@ -161,7 +161,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
       },
       x: x(3) + x.bandwidth() / 2,
       y: y(15),
-      dy: 90,
+      dy: -30,
       dx: 30,
       color: COLOR.DARK_GREY
     },
@@ -221,8 +221,8 @@ d3.csv('./files/lakers_game_logs.csv', data => {
       },
       x: x(45) + x.bandwidth() / 2,
       y: y(-9),
-      dy: 30,
-      dx:10,
+      dy: 50,
+      dx:20,
       color: COLOR.DARK_GREY
     },
     {
