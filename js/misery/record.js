@@ -1,4 +1,4 @@
-var record_margin = { top: 80, bottom: 50, left: 80, right: 83 }
+var record_margin = { top: 80, bottom: 150, left: 140, right: 83 }
 var record_width = 900
 var record_height = 400
 
@@ -73,12 +73,6 @@ d3.csv('./files/prev_records.csv', data => {
       .attr('y', d => y(d + 1) - 8)
       .attr('width', 80)
       .attr('height', 16)
-      // .attr('stroke', (d, r) => {
-      //   if (r <= 7) {
-      //     return COLOR.LAKERS_YELLOW
-      //   }
-      //   return COLOR.LIGHT_GREY
-      // })
       .attr('stroke', COLOR.LIGHT_GREY)
       .attr('fill', 'none')
 
@@ -86,6 +80,16 @@ d3.csv('./files/prev_records.csv', data => {
       .attr('fill', COLOR.LAKERS_YELLOW)
       .attr('stroke', 'none')
   }
+
+  record_svg
+  .append('text')
+  .attr('class', "misery-rank-caption")
+  .attr('x', 30)
+  .attr('y', record_height + 80)
+  .text('* The top 8 teams in each conference qualify for playoffs.')
+  .attr('font-size', 24)
+  .attr('fill', COLOR.LAKERS_YELLOW)
+  .attr('display', 'none')
 
   // title
   record_svg

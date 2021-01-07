@@ -36,8 +36,6 @@ var regularSeasonSummarySvg = d3
 
 // read data
 d3.csv('./files/lakers_game_logs.csv', data => {
-
-
   var stats = []
   var winGames = []
   var count = 0
@@ -78,14 +76,31 @@ d3.csv('./files/lakers_game_logs.csv', data => {
     .attr('cx', regular_season_summary_width / 3)
     .attr('cy', regular_season_summary_height / 2)
     .attr('r', 20)
-    .style('fill', d => (d.WL === 'W' ? COLOR.LAKERS_YELLOW : 'none'))
+    // .style('fill', d => (d.WL === 'W' ? COLOR.LAKERS_YELLOW : 'none'))
+    .style('fill', 'none')
     .attr('stroke', COLOR.LIGHT_GREY)
     .style('stroke-width', 2)
 
+    regularSeasonSummarySvg
+    .append("text")
+    .attr("class", "regular-season-summary-wl-caption")
+    .attr("x", 250)
+    .attr("y", regular_season_summary_height)
+    .text("Win")
+    .attr("font-size", 30)
+    .attr("display", "none")
+
+
+    regularSeasonSummarySvg
+    .append("text")
+    .attr("class", "regular-season-summary-wl-caption")
+    .attr("x", 700)
+    .attr("y", regular_season_summary_height)
+    .text("Loss")
+    .attr("font-size", 30)
+    .attr("display", "none")
+
   // simulation and animation
-  var regularSeasonSummarySectionEl = document
-    .getElementsByClassName('regular-season-summary-section')
-    .item(0)
   var regularSeasonSummaryGraphContainerEl = document
     .getElementsByClassName('regular-season-summary-graph-container')
     .item(0)
@@ -99,9 +114,9 @@ d3.csv('./files/lakers_game_logs.csv', data => {
     .range([0, 450])
 
   var radius = d3
-      .scaleOrdinal()
-  .domain(['W', 'L'])
-  .range([75, 30])
+    .scaleOrdinal()
+    .domain(['W', 'L'])
+    .range([75, 30])
 
   var x1 = d3
     .scaleOrdinal()
@@ -171,6 +186,23 @@ d3.csv('./files/lakers_game_logs.csv', data => {
     offset: '50%'
   })
 
+  new Waypoint({
+    element: regularSeasonSummaryStep1El,
+    handler: function (direction) {
+      if (direction === 'down') {
+        console.log('here')
+        d3
+          .selectAll('.summary-circle-W')
+          .style('fill', COLOR.LAKERS_YELLOW)
+      } else {
+        d3
+          .selectAll('.summary-circle-W')
+          .style('fill', 'none')
+      }
+    },
+    offset: -50
+  })
+
   // // step 2 simulation
   var regularSeasonSummaryStep2El = document.getElementById('summary-step-2')
 
@@ -178,6 +210,8 @@ d3.csv('./files/lakers_game_logs.csv', data => {
     element: regularSeasonSummaryStep2El,
     handler: function (direction) {
       if (direction == 'down') {
+        d3.selectAll(".regular-season-summary-wl-caption").attr("display", "block")
+
         simulation
           .force(
             'x',
@@ -204,13 +238,16 @@ d3.csv('./files/lakers_game_logs.csv', data => {
           .alphaTarget(0.5)
           .restart()
       } else {
+        d3.selectAll(".regular-season-summary-wl-caption").attr("display", "none")
+
         simulation
           .force(
             'x',
             d3
               .forceX()
-              .strength(0.05)
-              .x(d => x1(d.WL))
+              .strength(0.15)
+              // .x(d => x1(d.WL))
+              .x(regular_season_summary_width / 2)
           )
           .force(
             'y',
@@ -242,6 +279,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
     element: regularSeasonSummaryStep3El,
     handler: function (direction) {
       if (direction == 'down') {
+        d3.selectAll(".regular-season-summary-wl-caption").attr("display", "none")
         simulation.stop()
 
         for (var i = 0; i < stats.length; i++) {
@@ -266,6 +304,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
           }
         }
       } else {
+        d3.selectAll(".regular-season-summary-wl-caption").attr("display", "block")
         simulation
           .force(
             'x',

@@ -1,4 +1,4 @@
-var kobe_injury_margin = { top: 100, bottom: 50, left: 50, right: 80 }
+var kobe_injury_margin = { top: 100, bottom: 150, left: 80, right: 80 }
 var kobe_injury_width = 900
 var kobe_injury_height = 500
 
@@ -211,9 +211,9 @@ d3.csv('./files/kobe_stats.csv', data => {
   kobe_injury_svg
     .append('text')
     .attr('x', kobe_injury_width / 2 - 20)
-    .attr('y', kobe_injury_height + 40)
+    .attr('y', kobe_injury_height + 60)
     .text('Season')
-    .attr('font-size', '20px')
+    .attr('font-size', '24px')
     .attr('fill', COLOR.LIGHT_GREY)
 
   kobe_injury_svg
@@ -222,7 +222,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('x', -kobe_injury_height / 2 - 20)
     .attr('y', -35)
     .text('PTS')
-    .attr('font-size', '20px')
+    .attr('font-size', '24px')
     .attr('fill', COLOR.LIGHT_GREY)
 
   kobe_injury_svg
@@ -231,7 +231,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('x', 1.03 * (kobe_injury_height / 2 - 10))
     .attr('y', 1.03 * (-kobe_injury_width - 30))
     .text('FG%')
-    .attr('font-size', '20px')
+    .attr('font-size', '24px')
     .attr('fill', COLOR.LIGHT_GREY)
 
   kobe_injury_svg
@@ -246,7 +246,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('x', kobe_injury_width / 2 - 130)
     .attr('y', -17)
     .text('PTS')
-    .attr('font-size', '20px')
+    .attr('font-size', '24px')
     .attr('fill', COLOR.LIGHT_GREY)
 
   kobe_injury_svg
@@ -261,7 +261,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('x', kobe_injury_width / 2 + 120)
     .attr('y', -17)
     .text('FG%')
-    .attr('font-size', '20px')
+    .attr('font-size', '22px')
     .attr('fill', COLOR.LIGHT_GREY)
 
   // title
@@ -280,7 +280,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('x', x(5) - 15)
     .attr('y', yPTS(stats[5].PTS) + 45)
     .text('torn Achilles tendon')
-    .attr('font-size', '20px')
+    .attr('font-size', '21px')
     .attr('fill', COLOR.LAKERS_YELLOW)
     .attr('text-anchor', 'middle')
 
@@ -289,7 +289,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('x', x(6))
     .attr('y', yPTS(stats[6].PTS) - 15)
     .text('tibial plateau fracture')
-    .attr('font-size', '20px')
+    .attr('font-size', '21px')
     .attr('fill', COLOR.LAKERS_YELLOW)
     .attr('text-anchor', 'middle')
 
@@ -298,7 +298,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('x', x(7) - 40)
     .attr('y', yPTS(stats[7].PTS) + 20)
     .text('torn shoulder rotator cuff')
-    .attr('font-size', '20px')
+    .attr('font-size', '21px')
     .attr('fill', COLOR.LAKERS_YELLOW)
     .attr('text-anchor', 'middle')
 })

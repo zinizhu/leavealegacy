@@ -47,54 +47,23 @@ d3.csv('./files/lakers_game_logs.csv', data => {
     .range([season_logs_height - 50, 0])
 
   // on hover
+  var regularPrevColor;
   const highlight = function (d) {
     var rectClass = '.season-log-' + d.GAME_ID
     var textClass = '.season-log-text-' + d.GAME_ID
-    var fgPctClass = '.season-percentage-FG-' + d.GAME_ID
-    var fgPctTextClass = '.season-percentage-FG-text-' + d.GAME_ID
-    var fg3PctClass = '.season-percentage-FG3-' + d.GAME_ID
-    var fg3PctTextClass = '.season-percentage-FG3-text-' + d.GAME_ID
     var color = d.DIFF < 0 ? COLOR.LAKERS_BLACK : COLOR.ORANGE
 
     var originalColor = d3.select(rectClass).style('fill')
-    if (originalColor !== 'red') {
-      d3.selectAll(rectClass).style('fill', color)
-    }
-
+    regularPrevColor = originalColor
+    d3.selectAll(rectClass).style('fill', color)
     d3.selectAll(textClass).style('display', 'block')
-    d3.selectAll(fgPctClass)
-      .attr('r', 4)
-      .style('fill', COLOR.LAKERS_YELLOW)
-    d3.selectAll(fgPctTextClass).style('display', 'block')
-    d3.selectAll(fg3PctClass)
-      .attr('r', 4)
-      .style('fill', COLOR.LAKERS_YELLOW)
-    d3.selectAll(fg3PctTextClass).style('display', 'block')
   }
 
   const doNotHighlight = function (d) {
     var rectClass = '.season-log-' + d.GAME_ID
     var textClass = '.season-log-text-' + d.GAME_ID
-    var fgPctClass = '.season-percentage-FG-' + d.GAME_ID
-    var fgPctTextClass = '.season-percentage-FG-text-' + d.GAME_ID
-    var fg3PctClass = '.season-percentage-FG3-' + d.GAME_ID
-    var fg3PctTextClass = '.season-percentage-FG3-text-' + d.GAME_ID
-    var color = d.DIFF < 0 ? COLOR.DARK_GREY : COLOR.LAKERS_YELLOW
-
-    var originalColor = d3.select(rectClass).style('fill')
-    if (originalColor !== 'red') {
-      d3.selectAll(rectClass).style('fill', color)
-    }
-
+    d3.selectAll(rectClass).style('fill', regularPrevColor)
     d3.selectAll(textClass).style('display', 'none')
-    d3.selectAll(fgPctClass)
-      .attr('r', 3)
-      .style('fill', COLOR.LAKERS_PURPLE)
-    d3.selectAll(fg3PctClass)
-      .attr('r', 3)
-      .style('fill', COLOR.RED)
-    d3.selectAll(fgPctTextClass).style('display', 'none')
-    d3.selectAll(fg3PctTextClass).style('display', 'none')
   }
 
   var logs = seasonLogs
@@ -173,10 +142,10 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         align: 'left'
       },
       connector: {
-        end: "arrow"
+        end: "dot"
       },
       x: x(2) + x.bandwidth() / 2,
-      y: y(0),
+      y: y(10),
       dy: 70,
       dx: 40,
       color: COLOR.DARK_GREY
@@ -188,11 +157,11 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         align: 'left'
       },
       connector: {
-        end: "arrow"
+        end: "dot"
       },
       x: x(3) + x.bandwidth() / 2,
-      y: y(0),
-      dy: 70,
+      y: y(15),
+      dy: 90,
       dx: 30,
       color: COLOR.DARK_GREY
     },
@@ -203,10 +172,10 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         align: 'left'
       },
       connector: {
-        end: "arrow"
+        end: "dot"
       },
       x: x(4) + x.bandwidth() / 2,
-      y: y(0),
+      y: y(5),
       dy: 70,
       dx: 25,
       color: COLOR.DARK_GREY
@@ -218,11 +187,11 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         align: 'left'
       },
       connector: {
-        end: "arrow"
+        end: "dot"
       },
       x: x(23) + x.bandwidth() / 2,
-      y: y(17),
-      dy: -30,
+      y: y(9),
+      dy: -40,
       dx: 20,
       color: COLOR.DARK_GREY
     },
@@ -233,10 +202,10 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         align: 'left'
       },
       connector: {
-        end: "arrow"
+        end: "dot"
       },
       x: x(26) + x.bandwidth() / 2,
-      y: y(5),
+      y: y(2),
       dy: -50,
       dx: 10,
       color: COLOR.DARK_GREY
@@ -248,11 +217,11 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         align: 'left'
       },
       connector: {
-        end: "arrow"
+        end: "dot"
       },
       x: x(45) + x.bandwidth() / 2,
-      y: y(0),
-      dy: -70,
+      y: y(-9),
+      dy: 30,
       dx:10,
       color: COLOR.DARK_GREY
     },
@@ -263,11 +232,11 @@ d3.csv('./files/lakers_game_logs.csv', data => {
         align: 'right'
       },
       connector: {
-        end: "arrow"
+        end: "dot"
       },
       x: x(61) + x.bandwidth() / 2,
-      y: y(0),
-      dy: 50,
+      y: y(5),
+      dy: 80,
       dx: -30,
       color: COLOR.DARK_GREY
     }

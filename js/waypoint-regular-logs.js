@@ -36,7 +36,7 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
 
         // highlight rect
         var rectClass = '.season-log-' + games[order].id
-        d3.selectAll(rectClass).style('fill', 'red')
+        d3.selectAll(rectClass).style('fill', COLOR.LAKERS_PURPLE_OP)
 
         var annonationClass = '.annotation-' + order
         d3.selectAll(annonationClass).style('display', 'block')
@@ -56,7 +56,7 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
         if (order != 0) {
           // set back prev
           var prevRectClass = '.season-log-' + games[order - 1].id
-          d3.selectAll(prevRectClass).style('fill', 'red')
+          d3.selectAll(prevRectClass).style('fill', COLOR.LAKERS_PURPLE_OP)
         }
       }
     },
@@ -89,7 +89,7 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
           // regularSeasonLogsEl.classList.add('fixed')
           // regularSeasonLogsEl.classList.remove('is-bottom')
           var rectClass = '.season-log-' + games[order].id
-          d3.selectAll(rectClass).style('fill', 'red')
+          d3.selectAll(rectClass).style('fill', COLOR.LAKERS_PURPLE_OP)
           var annonationClass = '.annotation-' + (order)
           d3.selectAll(annonationClass).style('display', 'block')
         }

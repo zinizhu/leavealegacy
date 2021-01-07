@@ -440,7 +440,7 @@ playoffsSvg
   .append('text')
   .attr('x', 300)
   .attr('y', 120)
-  .text('click to watch game highlights')
+  .text('Click to watch game highlights')
   .attr('font-family', 'Caveat')
   .attr('font-size', 12)
   .attr('fill', COLOR.LIGHT_GREY)

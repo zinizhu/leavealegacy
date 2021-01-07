@@ -18,12 +18,12 @@ new Waypoint({
       miseryGraphContainerEl.classList.add('is-fixed')
       miseryTextBoxEls.item(0).classList.add('seen')
 
-      miseryBgEl.style.visibility = 'visible'
+      // miseryBgEl.style.visibility = 'visible'
     } else {
       miseryGraphContainerEl.classList.remove('is-fixed')
       miseryTextBoxEls.item(0).classList.remove('seen')
 
-      miseryBgEl.style.visibility = 'hidden'
+      // miseryBgEl.style.visibility = 'hidden'
     }
   }
 })
@@ -50,11 +50,21 @@ new Waypoint({
         .duration(500)
         .selectAll('.records-rank-rect-eight')
         .attr('stroke', COLOR.LAKERS_YELLOW)
+
+      d3.transition()
+        .duration(500)
+        .select('.misery-rank-caption')
+        .attr('display', 'block')
     } else {
       d3.transition()
         .duration(500)
         .selectAll('.records-rank-rect-eight')
         .attr('stroke', COLOR.LIGHT_GREY)
+
+      d3.transition()
+        .duration(500)
+        .select('.misery-rank-caption')
+        .attr('display', 'none')
     }
   },
   offset: 500
@@ -69,15 +79,14 @@ new Waypoint({
       miseryTextBoxEls.item(0).classList.remove('seen')
       miseryTextBoxEls.item(1).classList.add('seen')
 
-      miseryBgEl.style.background = "url('./files/images/lakers-rookie.jpg') no-repeat center center / cover"
-
+      // miseryBgEl.style.background = "url('./files/images/lakers-rookie.jpg') no-repeat center center / cover"
     } else {
       miseryGraphEl.setAttribute('display', 'block')
       draftGraphEl.setAttribute('display', 'none')
       miseryTextBoxEls.item(0).classList.add('seen')
       miseryTextBoxEls.item(1).classList.remove('seen')
 
-      miseryBgEl.style.background = "url('./files/images/kobe-injury-cover.jpg') no-repeat center center / cover"
+      // miseryBgEl.style.background = "url('./files/images/kobe-injury-cover.jpg') no-repeat center center / cover"
     }
   },
   offset: 0
@@ -92,15 +101,14 @@ new Waypoint({
       miseryTextBoxEls.item(1).classList.remove('seen')
       miseryTextBoxEls.item(2).classList.add('seen')
 
-      miseryBgEl.style.background = "url('./files/images/lakers-2018-misery.jpg') no-repeat center center / cover"
-
+      // miseryBgEl.style.background = "url('./files/images/lakers-2018-misery.jpg') no-repeat center center / cover"
     } else {
       recordGraphEl.setAttribute('display', 'none')
       draftGraphEl.setAttribute('display', 'block')
       miseryTextBoxEls.item(1).classList.add('seen')
       miseryTextBoxEls.item(2).classList.remove('seen')
 
-      miseryBgEl.style.background = "url('./files/images/lakers-rookie.jpg') no-repeat center center / cover"
+      // miseryBgEl.style.background = "url('./files/images/lakers-rookie.jpg') no-repeat center center / cover"
     }
   },
   offset: 0

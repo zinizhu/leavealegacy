@@ -1,7 +1,7 @@
 :root {
   --LAKERS_YELLOW: #fdb927;
   --LAKERS_YELLOW_OP: #ffdd94;
-  --LAKERS_PURPLE: #552583;
+  --LAKERS_PURPLE: #782fbc;
   --LAKERS_BLACK: #000000;
   --MID_GREY: #6b6e76;
   --DARK_GREY: #202125;
@@ -103,7 +103,7 @@ body {
 
 .axisLight text {
   fill: var(--LIGHT_GREY);
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .axisRecord text {
@@ -227,7 +227,7 @@ body {
   transform: translate3d(0, 0, 0);
 }
 
-#misery-bg {
+/* #misery-bg {
   position: absolute;
   z-index: 950;
   top: 45%;
@@ -238,7 +238,7 @@ body {
     center / cover;
   opacity: 0.12;
   visibility: hidden;
-}
+} */
 
 .misery-graph-container.is-fixed {
   position: fixed;
