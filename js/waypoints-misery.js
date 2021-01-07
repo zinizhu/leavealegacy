@@ -69,7 +69,7 @@ new Waypoint({
       miseryTextBoxEls.item(0).classList.remove('seen')
       miseryTextBoxEls.item(1).classList.add('seen')
 
-      miseryBgEl.style.background = "url('../files/images/lakers-rookie.jpg') no-repeat center center / cover"
+      miseryBgEl.style.background = "url('./files/images/lakers-rookie.jpg') no-repeat center center / cover"
 
     } else {
       miseryGraphEl.setAttribute('display', 'block')
@@ -77,7 +77,7 @@ new Waypoint({
       miseryTextBoxEls.item(0).classList.add('seen')
       miseryTextBoxEls.item(1).classList.remove('seen')
 
-      miseryBgEl.style.background = "url('../files/images/kobe-injury-cover.jpg') no-repeat center center / cover"
+      miseryBgEl.style.background = "url('./files/images/kobe-injury-cover.jpg') no-repeat center center / cover"
     }
   },
   offset: 0
@@ -92,7 +92,7 @@ new Waypoint({
       miseryTextBoxEls.item(1).classList.remove('seen')
       miseryTextBoxEls.item(2).classList.add('seen')
 
-      miseryBgEl.style.background = "url('../files/images/lakers-2018-misery.jpg') no-repeat center center / cover"
+      miseryBgEl.style.background = "url('./files/images/lakers-2018-misery.jpg') no-repeat center center / cover"
 
     } else {
       recordGraphEl.setAttribute('display', 'none')
@@ -100,7 +100,7 @@ new Waypoint({
       miseryTextBoxEls.item(1).classList.add('seen')
       miseryTextBoxEls.item(2).classList.remove('seen')
 
-      miseryBgEl.style.background = "url('../files/images/lakers-rookie.jpg') no-repeat center center / cover"
+      miseryBgEl.style.background = "url('./files/images/lakers-rookie.jpg') no-repeat center center / cover"
     }
   },
   offset: 0
