@@ -3,14 +3,15 @@
   --LAKERS_YELLOW_OP: #ffdd94;
   --LAKERS_PURPLE: #552583;
   --LAKERS_BLACK: #000000;
-  /* --DARK_GREY: #434343; */
+  --MID_GREY: #6b6e76;
   --DARK_GREY: #202125;
   --LIGHT_GREY: #d4d4d4;
   --ORANGE: #ff9100;
   --RED: #fd2727;
   --GREEN: #2fa62b;
   --BLUE: #276bfd;
-  --BACKGROUND: #f6f6f5;
+  /* --BACKGROUND: #f6f6f5; */
+  --BACKGROUND: #f6f6e5;
 }
 
 @font-face {
@@ -28,13 +29,11 @@ body {
   background-color: var(--BACKGROUND);
 }
 
-/* new version */
 /* general layout settings */
 /* page */
 .page {
   display: block;
   text-align: center;
-  /* padding: 40px 30px; */
   width: 100%;
 }
 
@@ -80,7 +79,6 @@ body {
   margin: 0 5px;
 }
 
-
 /* text visibility */
 .text-show {
   opacity: 1 !important;
@@ -88,16 +86,18 @@ body {
 
 .text-hide {
   opacity: 0.05;
-  transition: all 250ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 /* axis */
 .axisLight line {
-  stroke: var(--LIGHT_GREY);
+  /* stroke: var(--LIGHT_GREY); */
+  stroke: var(--MID_GREY);
 }
 
 .axisLight path {
-  stroke: var(--LIGHT_GREY);
+  /* stroke: var(--LIGHT_GREY); */
+  stroke: var(--MID_GREY);
   display: none;
 }
 
@@ -122,21 +122,24 @@ body {
 
 .cover #title {
   position: absolute;
-  bottom: 100px;
+  bottom: 140px;
   color: white;
-  margin-left: 120px;
+  left: 150px;
 }
 
 .cover #title h1 {
-  font-size: 70px;
+  font-family: 'Oswald';
+  font-size: 140px;
+  margin-bottom: 100px;
 }
 
 .cover #title h2 {
-  font-size: 30px;
+  font-size: 36px;
 }
 
 .cover #title p {
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 140%;
 }
 
 /* the giants */
@@ -150,7 +153,7 @@ body {
   margin: 100px auto;
 }
 
-/* transition */ 
+/* transition */
 #transition-circle-svg {
   position: fixed;
   z-index: 100;
@@ -216,12 +219,25 @@ body {
 
 .misery-graph-container {
   position: absolute;
-  margin-top: 150px;
+  margin-top: 100px;
   top: 0;
   margin-left: 45%;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+
+#misery-bg {
+  position: absolute;
+  z-index: 950;
+  top: 45%;
+  bottom: -55%;
+  left: 0;
+  right: 0;
+  background: url('../files/images/kobe-injury-cover.jpg') no-repeat center
+    center / cover;
+  opacity: 0.12;
+  visibility: hidden;
 }
 
 .misery-graph-container.is-fixed {
@@ -239,7 +255,7 @@ body {
 
 .misery-graph-container svg {
   top: 300px;
-	position: relative;
+  position: relative;
 }
 
 /* the New Team */
@@ -260,7 +276,7 @@ body {
   right: 0;
 }
 
-.lakers-season-logs-class svg{
+.lakers-season-logs-class svg {
   top: 200px;
 }
 
@@ -289,7 +305,7 @@ body {
   text-align: center;
 }
 
-#regular-season-log-story-sections section p{
+#regular-season-log-story-sections section p {
   font-size: 18px;
 }
 
@@ -297,13 +313,13 @@ body {
   margin-bottom: 20px;
 }
 
-#regular-season-log-story-sections .section-title h3{
+#regular-season-log-story-sections .section-title h3 {
   font-size: 28px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-#regular-season-log-story-sections .section-title p{
+#regular-season-log-story-sections .section-title p {
   font-size: 20px;
 }
 
@@ -318,7 +334,6 @@ body {
   margin-bottom: 300px;
 }
 
-
 .section-title p {
   text-align: center;
 }
@@ -329,7 +344,6 @@ body {
   position: relative;
 }
 
-
 .regular-season-summary-section {
   margin-top: 100px;
   position: relative;
@@ -337,7 +351,7 @@ body {
   height: 100%;
 }
 
-.regular-season-summary-text  {
+.regular-season-summary-text {
   width: 40%;
   text-align: center;
   padding-top: 20%;
@@ -363,7 +377,6 @@ body {
   opacity: 1;
 }
 
-
 .regular-season-summary-graph-container {
   position: absolute;
   top: 0;
@@ -382,7 +395,6 @@ body {
   top: auto;
 }
 
-
 /* kobe page */
 #kobe-memory {
   position: relative;
@@ -398,7 +410,7 @@ body {
 #kobe-memory-text {
   background-color: #5454547f;
   position: absolute;
-  width: 100%;;
+  width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -427,7 +439,7 @@ body {
 
 #playoffs-intro-section {
   display: flex;
-  margin:auto 20%;
+  margin: auto 20%;
 }
 
 #playoffs-intro-section .left {
@@ -436,8 +448,7 @@ body {
   text-align: right;
 }
 
-
-#playoffs-intro-section .left p{
+#playoffs-intro-section .left p {
   width: 60%;
   margin-right: 20%;
   color: var(--LIGHT_GREY);
@@ -468,7 +479,7 @@ body {
   background: #202125;
 }
 
-#playoffs-rounds svg{
+#playoffs-rounds svg {
   display: inline-block;
   position: absolute;
   top: 0;
@@ -494,7 +505,7 @@ body {
 
 #reference {
   background-color: var(--DARK_GREY);
-  color:  var(--LIGHT_GREY);
+  color: var(--LIGHT_GREY);
   text-align: left;
   padding: 30px;
 }
@@ -503,7 +514,6 @@ body {
   font-size: 18px;
   color: var(--LIGHT_GREY);
 }
-
 
 #reference a {
   color: var(--LIGHT_GREY);
@@ -523,7 +533,7 @@ a:visited {
 
 .video-annotation text tspan {
   font-size: 10px;
-  font-family: 'Caveat'
+  font-family: 'Caveat';
 }
 
 .video-section {

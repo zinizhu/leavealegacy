@@ -81,6 +81,7 @@ d3.csv("./files/draft_picks.csv", (data) => {
       .text(data[i].info)
       .attr("text-anchor", "middle")
       .attr("fill", COLOR.LAKERS_YELLOW)
+      .attr("font-size", 18)
   }
   
   // title

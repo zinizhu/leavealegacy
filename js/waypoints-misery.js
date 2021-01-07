@@ -9,6 +9,7 @@ var draftGraphEl = document.getElementById('draft-graph-svg')
 var recordGraphEl = document.getElementById('record-graph-svg')
 var timelineCircleEl = document.getElementById('transition-circle-svg')
 var miserySectionWholeEl = document.getElementById('time-of-misery')
+var miseryBgEl = document.getElementById('misery-bg')
 
 new Waypoint({
   element: miserySectionEl,
@@ -17,9 +18,12 @@ new Waypoint({
       miseryGraphContainerEl.classList.add('is-fixed')
       miseryTextBoxEls.item(0).classList.add('seen')
 
+      miseryBgEl.style.visibility = 'visible'
     } else {
       miseryGraphContainerEl.classList.remove('is-fixed')
       miseryTextBoxEls.item(0).classList.remove('seen')
+
+      miseryBgEl.style.visibility = 'hidden'
     }
   }
 })
@@ -38,6 +42,23 @@ new Waypoint({
   offset: 250
 })
 
+new Waypoint({
+  element: miseryTextBoxEls.item(2),
+  handler: function (direction) {
+    if (direction == 'down') {
+      d3.transition()
+        .duration(500)
+        .selectAll('.records-rank-rect-eight')
+        .attr('stroke', COLOR.LAKERS_YELLOW)
+    } else {
+      d3.transition()
+        .duration(500)
+        .selectAll('.records-rank-rect-eight')
+        .attr('stroke', COLOR.LIGHT_GREY)
+    }
+  },
+  offset: 500
+})
 
 new Waypoint({
   element: miseryTextBoxEls.item(0),
@@ -47,11 +68,16 @@ new Waypoint({
       draftGraphEl.setAttribute('display', 'block')
       miseryTextBoxEls.item(0).classList.remove('seen')
       miseryTextBoxEls.item(1).classList.add('seen')
+
+      miseryBgEl.style.background = "url('../files/images/lakers-rookie.jpg') no-repeat center center / cover"
+
     } else {
       miseryGraphEl.setAttribute('display', 'block')
       draftGraphEl.setAttribute('display', 'none')
       miseryTextBoxEls.item(0).classList.add('seen')
       miseryTextBoxEls.item(1).classList.remove('seen')
+
+      miseryBgEl.style.background = "url('../files/images/kobe-injury-cover.jpg') no-repeat center center / cover"
     }
   },
   offset: 0
@@ -66,17 +92,15 @@ new Waypoint({
       miseryTextBoxEls.item(1).classList.remove('seen')
       miseryTextBoxEls.item(2).classList.add('seen')
 
-      // timelineCircleEl.setAttribute('display', 'none')
-      // miserySectionWholeEl.style.backgroundColor = COLOR.DARK_GREY
+      miseryBgEl.style.background = "url('../files/images/lakers-2018-misery.jpg') no-repeat center center / cover"
+
     } else {
       recordGraphEl.setAttribute('display', 'none')
       draftGraphEl.setAttribute('display', 'block')
       miseryTextBoxEls.item(1).classList.add('seen')
       miseryTextBoxEls.item(2).classList.remove('seen')
 
-      // timelineCircleEl.setAttribute('display', 'block')
-      // miserySectionWholeEl.style.backgroundColor = COLOR.BACKGROUND_LIGHT
-      // miserySectionWholeEl.style.transitionDuration = 0
+      miseryBgEl.style.background = "url('../files/images/lakers-rookie.jpg') no-repeat center center / cover"
     }
   },
   offset: 0

@@ -1,7 +1,7 @@
 // define margin and svg size
 var regular_season_summary_margin = {
   top: 230,
-  bottom: 80,
+  bottom: 180,
   left: 200,
   right: 80
 }
