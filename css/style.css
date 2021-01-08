@@ -12,6 +12,8 @@
   --BLUE: #276bfd;
   --BACKGROUND: #f6f6f5;
   /* --BACKGROUND: #f6f6e5; */
+  --REFERENCE_TEXT_COLOR: #5e5e5e;
+  --REFERENCE_TITLE_COLOR: #6e6e6e;
 }
 
 @font-face {
@@ -505,33 +507,64 @@ body {
 
 /* reference */
 
-#reference {
+.reference {
   background-color: var(--DARK_GREY);
-  color: var(--LIGHT_GREY);
+  color: var(--REFERENCE_TITLE_COLOR);
   text-align: left;
-  padding: 30px;
+  padding: 200px;
 }
 
-#reference li {
+.reference h1 {
+  margin-bottom: 30px;
+}
+
+.reference-section {
+  margin-bottom: 50px;
+}
+
+.reference-sub-section {
+  width: 40%;
+  margin-bottom: 10px;
+}
+
+.reference-key {
+  color: var(--REFERENCE_TITLE_COLOR);
+  font-size: 16px;
+}
+
+.reference-value {
+  color: var(--REFERENCE_TEXT_COLOR);
+}
+
+.reference-title {
+  font-size:22px;
+  font-weight: 200;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.reference li {
   font-size: 18px;
-  color: var(--LIGHT_GREY);
+  color: var(--REFERENCE_TEXT_COLOR);
 }
 
-#reference a {
-  color: var(--LIGHT_GREY);
+.reference a {
+  color: var(--REFERENCE_TEXT_COLOR);
 }
 
 a:link {
-  color: var(--LIGHT_GREY);
+  color: var(--REFERENCE_TEXT_COLOR);
 }
 
 a:hover {
-  color: var(--LIGHT_GREY);
+  color: var(--REFERENCE_TEXT_COLOR);
 }
 
 a:visited {
-  color: var(--DARK_GREY);
+  color: var(--REFERENCE_TEXT_COLOR);
 }
+
+/* embedded youtube videos */
 
 .video-annotation text tspan {
   font-size: 10px;
@@ -569,29 +602,6 @@ a:visited {
 }
 
 /* the new team */
-/* #new-team-intro{
-  display: grid;
-  margin: 200px 200px 200px 200px;
-  grid-template-columns: 450px 940px 450px;
-  grid-template-rows: 200px 200px 300px 200px; 
-  gap: 50px;
-  height:100% 
-  
-} */
-
-/* #section-title {
-  grid-column: 2;
-  grid-row: 2;
-  margin: 50px;
-  font-size: 50px;
-  
-} */
-
-/* #intro-text{
-  grid-column: 2;
-  grid-row: 3/5;
-
-} */
 
 #intro-text p{
   margin:0px 0px 0px 20px;
