@@ -1,4 +1,4 @@
-var ad_margin = { top: 40, right: 40, bottom: 60, left: 40 }
+var ad_margin = { top: 45, right: 40, bottom: 60, left: 40 }
 var ad_width = 300
 var ad_height = 180
 var ad_colorName = ['#276bfd', '#fd2727', '#fdb927', '#2fa62b']
@@ -91,7 +91,7 @@ d3.csv('./files/ad.csv', function (data) {
     d3.selectAll('.ad-perf-' + dimension + '-g')
       .append('text')
       .attr('x', 0)
-      .attr('y', -5)
+      .attr('y', -15)
       .text(ad_perf_titles[i])
 
     d3.selectAll('.ad-perf-' + dimension + '-g')
@@ -119,6 +119,38 @@ d3.csv('./files/ad.csv', function (data) {
       .attr('height', function (d) {
         return ad_height - ad_perf_y[i](0)
       })
+      .attr('dimension', dimension)
+      .attr('color', ad_colorName[i])
+      .on('mouseover', function (d, c) {
+        var di = d3.select(this).attr('dimension')
+        d3.selectAll('.ad-perf-' + di + '-' + c)
+        .attr('display', 'block')
+        d3.select(this).attr('fill', COLOR.LAKERS_PURPLE)
+      })
+      .on('mouseleave', function (d, c) {
+        var di = d3.select(this).attr('dimension')
+        var color = d3.select(this).attr('color')
+        d3.selectAll('.ad-perf-' + di + '-' + c)
+        .attr('display', 'none')
+        d3.select(this).attr('fill', color)
+      })
+
+    d3.selectAll('.ad-perf-' + dimension + '-g')
+      .selectAll('rect-' + dimension + '-text')
+      .data(ad_perf_Stats[i])
+      .enter()
+      .append('text')
+      .attr('class', (d, c) => 'ad-perf-' + dimension + '-' + c)
+      .attr('x', function (d) {
+        return ad_perf_x(d.Seasons) + ad_perf_x.bandwidth() / 2 - 5
+      })
+      .attr('y', function (d) {
+        return ad_perf_y[i](d[dimension]) - 10
+      })
+      .text(d => d[dimension])
+      .attr('font-size', 12)
+      .attr('text-anchor', 'middle')
+      .attr('display', 'none')
 
     d3.selectAll('.ad-perf-' + dimension + '-g')
       .selectAll('rect-' + dimension)

@@ -18,7 +18,7 @@ var playoffsSvg = d3
   .attr('x', '100%')
   .attr('y', playoffs_height)
   .attr('preserveAspectRatio', 'xMidYMid meet')
-  .attr('viewBox', '0 0 1000 3000')
+  .attr('viewBox', '0 0 1000 3600')
   .classed('svg-content', true)
   .append('g')
 
@@ -70,36 +70,36 @@ for (var i = 0; i < 4; i++) {
 
 // titles
 playoffsSvg
-.append('text')
-.attr('x', 350)
-.attr('y', 55)
-.text("West Conference - 1st Round")
-.attr('fill', 'white')
-.attr('font-size', 28)
+  .append('text')
+  .attr('x', 350)
+  .attr('y', 55)
+  .text('West Conference - 1st Round')
+  .attr('fill', 'white')
+  .attr('font-size', 28)
 
 playoffsSvg
-.append('text')
-.attr('x', 60)
-.attr('y', 655)
-.text("West Conference - Semi-finals")
-.attr('fill', 'white')
-.attr('font-size', 28)
+  .append('text')
+  .attr('x', 60)
+  .attr('y', 655)
+  .text('West Conference - Semi-finals')
+  .attr('fill', 'white')
+  .attr('font-size', 28)
 
 playoffsSvg
-.append('text')
-.attr('x', 400)
-.attr('y', 1255)
-.text("West Conference - Finals")
-.attr('fill', 'white')
-.attr('font-size', 28)
+  .append('text')
+  .attr('x', 400)
+  .attr('y', 1255)
+  .text('West Conference - Finals')
+  .attr('fill', 'white')
+  .attr('font-size', 28)
 
 playoffsSvg
-.append('text')
-.attr('x', 60)
-.attr('y', 1855)
-.text("NBA Finals")
-.attr('fill', 'white')
-.attr('font-size', 28)
+  .append('text')
+  .attr('x', 60)
+  .attr('y', 1855)
+  .text('NBA Finals')
+  .attr('fill', 'white')
+  .attr('font-size', 28)
 
 // draw curves
 
@@ -226,10 +226,10 @@ const ending_points_up = [
   [500, 2520]
 ]
 
-const ending_points_down = [
-  [500, 2680],
-  [500, 2720]
-]
+// const ending_points_down = [
+//   [500, 2680],
+//   [500, 2720]
+// ]
 
 const all_curves_points = [
   portland_curve_up_points,
@@ -240,8 +240,8 @@ const all_curves_points = [
   denver_curve_down_points,
   miami_curve_up_points,
   miami_curve_down_points,
-  ending_points_up,
-  ending_points_down
+  ending_points_up
+  // ending_points_down
 ]
 
 all_curves_points.forEach(curve => {
@@ -285,7 +285,7 @@ playoffsSvg
 var endingTextGroup = playoffsSvg
   .append('g')
   .attr('class', 'endingWordGroup')
-  .attr('transform', 'translate(195,2735)')
+  .attr('transform', 'translate(195,2910)')
 
 var endingWordsText =
   'LeBron James got his fourth Finals MVP. AD won his first ring. The Lakers became the first team in league history to go undefeated when taking a lead into the fourth quarter, going 57-0 between the regular season and the playoffs. They were also the first franchise to earn the No. 1 seed following a five-year postseason absence.<br /><br />' +
@@ -302,18 +302,18 @@ endingTextGroupNode.call(endingTextWrap)
 playoffsSvg
   .append('line')
   .attr('x1', 200)
-  .attr('y1', 2720)
+  .attr('y1', 2900)
   .attr('x2', 800)
-  .attr('y2', 2720)
+  .attr('y2', 2900)
   .attr('stroke', 'white')
   .attr('stroke-width', 1)
 
 playoffsSvg
   .append('line')
   .attr('x1', 200)
-  .attr('y1', 2880)
+  .attr('y1', 3060)
   .attr('x2', 800)
-  .attr('y2', 2880)
+  .attr('y2', 3060)
   .attr('stroke', 'white')
   .attr('stroke-width', 1)
 
@@ -500,8 +500,8 @@ var houston_games_idx = [1, 4]
 var houston_line_end = [300 + 600, 200 + 600]
 
 var houston_videos_links = [
-  "https://www.youtube.com/embed/l0D95AzZZC4",
-  "https://www.youtube.com/embed/cINpXjiZiTk"
+  'https://www.youtube.com/embed/l0D95AzZZC4',
+  'https://www.youtube.com/embed/cINpXjiZiTk'
 ]
 
 houston_games_idx.forEach((idx, i) => {
@@ -543,7 +543,6 @@ houston_games_idx.forEach((idx, i) => {
         .item(0)
         .classList.toggle('active')
     })
-
 
   const houston_game_tri = [
     [x - 5, 16 + houston_line_end[i] + 8],
@@ -618,8 +617,8 @@ var denver_games_idx = [1, 4]
 var denver_line_end = [180 + 1200, 200 + 1200]
 
 var denver_videos_links = [
-  "https://www.youtube.com/embed/sFrrbM4Q3T4",
-  "https://www.youtube.com/embed/DSIDOgR5O5g"
+  'https://www.youtube.com/embed/sFrrbM4Q3T4',
+  'https://www.youtube.com/embed/DSIDOgR5O5g'
 ]
 
 denver_games_idx.forEach((idx, i) => {
@@ -735,9 +734,9 @@ var miami_games_idx = [3, 4, 5]
 var miami_line_end = [140 + 1800, 330 + 1800, 160 + 1800]
 
 var miami_videos_links = [
-  "https://www.youtube.com/embed/Bh90U367Ivc",
-  "https://www.youtube.com/embed/1S1cXaqkIRQ",
-  "https://www.youtube.com/embed/czq7usfGiZY"
+  'https://www.youtube.com/embed/Bh90U367Ivc',
+  'https://www.youtube.com/embed/1S1cXaqkIRQ',
+  'https://www.youtube.com/embed/czq7usfGiZY'
 ]
 
 miami_games_idx.forEach((idx, i) => {
@@ -1032,3 +1031,176 @@ for (var i = 0; i < miami_text_start.length; i++) {
 
   textNode.call(textwrap)
 }
+
+// history time axis
+var playoffs_history_margin = { top: 50, bottom: 200, left: 150, right: 220 }
+var playoffs_history_width = 1000
+var playoffs_history_height = 450
+
+var playoffs_timeline_svg = playoffsSvg
+  .append('g')
+  .attr(
+    'transform',
+    'translate(125,2580)')
+
+d3.csv('./files/lakers_champ.csv', data => {
+  var years = []
+  data.forEach(row => {
+    years.push(+row['YEARAWARDED'])
+  })
+  years.push(2020)
+  years.sort()
+
+  allYears = []
+  for (var i = 1949; i <= 2019; i++) {
+    allYears.push(i)
+  }
+
+  var x = d3
+    .scaleLinear()
+    .domain([1948, 2020])
+    .range([0, 750])
+
+  var axis = svg
+    .append('g')
+    .attr('class', 'lakers-champ-axis')
+    .attr('transform', 'translate(0,' + 50 + ')')
+    .call(
+      d3
+        .axisBottom(x)
+        .tickSize(0)
+        .tickValues(years)
+        .tickFormat(d3.format('d'))
+    )
+
+  playoffs_timeline_svg
+    .append('g')
+    .attr('class', 'playoffs-lakers-champ-axis')
+    .attr('transform', 'translate(0,' + 200 + ')')
+    .call(
+      d3
+        .axisBottom(x)
+        .tickSize(0)
+        .tickValues(years)
+        .tickFormat(d3.format('d'))
+    )
+
+  d3.selectAll('.playoffs-lakers-champ-axis path').attr(
+    'stroke',
+    COLOR.LIGHT_GREY
+  )
+
+  d3.selectAll('.playoffs-lakers-champ-axis .tick line')
+    .attr('class', (d) => {
+      if (d === 2020) {
+        return 'playoffs-axis-tick-line playoffs-axis-tick-line-2020'
+      }
+      return 'playoffs-axis-tick-line'
+    })
+    .attr('y2', (d, i) => {
+      if (d === 2020) {
+        return 0
+      }
+      if (i % 2 === 0) {
+        return -30
+      }
+      return 30
+    })
+    .attr('stroke', COLOR.LIGHT_GREY)
+
+  d3.selectAll('.playoffs-lakers-champ-axis .tick text')
+  .attr('class', (d) => {
+    if (d === 2020) {
+      return 'playoffs-axis-tick-text playoffs-axis-tick-text-2020'
+    }
+    return 'playoffs-axis-tick-text'
+  })
+    .attr('y', (d, i) => {
+      if (d === 2020) {
+        return -20
+      }
+      if (i % 2 === 0) {
+        return -50
+      }
+      return 40
+    })
+    .attr('font-size', 8)
+    .attr('fill', COLOR.LIGHT_GREY)
+    .attr('display', d => {
+      if (d === 2020) {
+        return 'none'
+      }
+      return 'block'
+    })
+
+  var ticks = d3.selectAll('.playoffs-lakers-champ-axis .tick')
+  ticks.each(function (tick, i) {
+    d3.select(this)
+      .append('circle')
+      .attr('class', (d) => {
+        if (d === 2020) {
+          return 'playoffs-axis-tick-circle playoffs-axis-tick-circle-2020'
+        }
+        return 'playoffs-axis-tick-circle'
+      })
+      .attr('cy', function (d) {
+        if (d === 2020) {
+          return 0
+        }
+        if (i % 2 === 0) {
+          return -30
+        }
+        return 30
+      })
+      .attr('r', d => {
+        if (d === 2020) {
+          return 0
+        }
+        return 6
+      })
+      .attr('fill', function (d) {
+        if (d === 2020) return COLOR.LAKERS_YELLOW
+        return COLOR.LAKERS_PURPLE
+      })
+  })
+
+  // image
+  playoffs_timeline_svg
+    .append('image')
+    .attr('class', 'playoffs-axis-tick-image')
+    .attr('xlink:href', './files/images/champ-trophy.png')
+    .attr('x', x(2020))
+    .attr('y', 150)
+    .attr('width', 40)
+    .attr('height', 50)
+
+  new Waypoint({
+    element: document.getElementsByClassName("reference").item(0),
+    handler: function (direction) {
+      console.log('here')
+
+      d3.selectAll('.playoffs-axis-tick-line-2020')
+      .transition()
+      .duration(2000)
+      .attr('y2', -60)
+
+      d3.selectAll('.playoffs-axis-tick-text-2020')
+      .transition()
+      .duration(2000)
+      .attr('y', -95)
+      .attr('display', 'block')
+
+      d3.selectAll('.playoffs-axis-tick-circle-2020')
+      .transition()
+      .duration(2000)
+      .attr('r', 16)
+      .attr('cy', -60)
+
+      d3.selectAll('.playoffs-axis-tick-image')
+      .transition()
+      .duration(2000)
+      .attr('y', 80)
+    },
+    offset: 1800
+  })
+})

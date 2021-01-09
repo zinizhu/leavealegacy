@@ -1,5 +1,5 @@
 // define margin and svg size
-var season_logs_margin = { top: 200, bottom: 10, left: 30, right: 30 }
+var season_logs_margin = { top: 100, bottom: 10, left: 30, right: 30 }
 var season_logs_width = 1500
 var season_logs_height = 340
 

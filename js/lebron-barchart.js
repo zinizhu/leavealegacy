@@ -1,5 +1,5 @@
 // define margin and svg size
-var lb_margin = { top: 20, bottom: 50, left: 60, right: 40 }
+var lb_margin = { top: 40, bottom: 30, left: 60, right: 40 }
 var lb_width = 350
 var lb_height = 180
 var lb_colorName = ['#276bfd', '#fd2727', '#fdb927', '#2fa62b']
@@ -98,7 +98,7 @@ d3.csv('./files/lebron.csv', function (data) {
     d3.selectAll('.lb-perf-' + dimension + '-g')
       .append('text')
       .attr('x', 0)
-      .attr('y', -5)
+      .attr('y', -15)
       .text(lb_perf_titles[i])
 
     d3.selectAll('.lb-perf-' + dimension + '-g')
@@ -113,6 +113,7 @@ d3.csv('./files/lebron.csv', function (data) {
       .data(lb_perf_Stats[i])
       .enter()
       .append('rect')
+      .attr('class', 'lb-perf-' + dimension + '-rect')
       .attr('x', function (d) {
         return lb_perf_x(d.Seasons)
       })
@@ -124,9 +125,40 @@ d3.csv('./files/lebron.csv', function (data) {
         return lb_perf_x.bandwidth() * 0.8
       })
       .attr('height', function (d) {
-        console.log(lb_height - lb_perf_y[i](0))
         return lb_height - lb_perf_y[i](0)
       })
+      .attr('dimension', dimension)
+      .attr('color', lb_colorName[i])
+      .on('mouseover', function (d, c) {
+        var di = d3.select(this).attr('dimension')
+        d3.selectAll('.lb-perf-' + di + '-' + c)
+        .attr('display', 'block')
+        d3.select(this).attr('fill', COLOR.LAKERS_PURPLE)
+      })
+      .on('mouseleave', function (d, c) {
+        var di = d3.select(this).attr('dimension')
+        var color = d3.select(this).attr('color')
+        d3.selectAll('.lb-perf-' + di + '-' + c)
+        .attr('display', 'none')
+        d3.select(this).attr('fill', color)
+      })
+
+      d3.selectAll('.lb-perf-' + dimension + '-g')
+      .selectAll('rect-' + dimension + '-text')
+      .data(lb_perf_Stats[i])
+      .enter()
+      .append('text')
+      .attr('class', (d, c) => 'lb-perf-' + dimension + '-' + c)
+      .attr('x', function (d) {
+        return lb_perf_x(d.Seasons) + lb_perf_x.bandwidth() / 2
+      })
+      .attr('y', function (d) {
+        return lb_perf_y[i](d[dimension]) - 10
+      })
+      .text(d => d[dimension])
+      .attr('font-size', 12)
+      .attr('text-anchor', 'middle')
+      .attr('display', 'none')
 
     d3.selectAll('.lb-perf-' + dimension + '-g')
       .selectAll('rect-' + dimension)
@@ -144,5 +176,6 @@ d3.csv('./files/lebron.csv', function (data) {
       .delay(function (d, j) {
         return j * 100
       })
+      
   }
 })

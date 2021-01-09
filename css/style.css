@@ -88,7 +88,7 @@ body {
 
 .text-hide {
   opacity: 0.05;
-  transition: all 100ms ease-in;
+  transition: all 0s ease-in;
 }
 
 /* axis */
@@ -101,6 +101,10 @@ body {
   /* stroke: var(--LIGHT_GREY); */
   stroke: var(--MID_GREY);
   display: none;
+}
+
+.axisLight tick {
+  margin-top: 20px;
 }
 
 .axisLight text {
@@ -483,7 +487,7 @@ body {
 #playoffs-rounds {
   position: relative;
   width: 100%;
-  height: 560%;
+  height: 600%;
   overflow: hidden;
 
   background: #202125;
@@ -607,6 +611,11 @@ a:visited {
   cursor: pointer;
 }
 
+#playoffs-timeline {
+  background-color: var(--DARK_GREY);
+  text-align: center;
+}
+
 /* the new team */
 
 #intro-text p{
@@ -719,7 +728,7 @@ a:visited {
 /* the new team page */
 
 .performance-title {
-  font-size: 120px;
+  font-size: 90px;
   color: #9D0000;
   text-align: left;
 }
@@ -735,7 +744,7 @@ a:visited {
   display: grid;
   margin: 200px 150px 200px 250px;
   grid-template-columns: 180px 420px 420px 550px 130px;
-  grid-template-rows: 380px 300px 300px; 
+  grid-template-rows: 320px 230px 300px; 
   gap: 50px;
   height:100% 
 }
@@ -743,7 +752,6 @@ a:visited {
 #ad-box-1{
   grid-column: 4;
   grid-row: 1/4;
-  margin: 0px;
   object-fit: fill;
 }
 
@@ -751,13 +759,14 @@ a:visited {
   margin-top: 50px;
   margin-left:20px;
   border-radius: 10px;
-  width: 100%;
+  width: 95%;
 }
 
 #ad-box-2{
   grid-column:2/4 ;
   grid-row: 1;
-  margin-top: 30px;
+  margin-top: 80px;
+  margin-bottom: 0px;
 }
 
 #ad-box-2 p{
@@ -813,8 +822,8 @@ a:visited {
   display: grid;
   margin: 200px 150px 200px 250px;
   grid-template-columns: 120px 630px 420px 420px 110px;
-  grid-template-rows: 380px 300px 300px; 
-  gap: 50px;
+  grid-template-rows: 380px 230px 300px; 
+  gap: 40px;
   height:100% 
 }
 
@@ -824,7 +833,7 @@ a:visited {
 }
 
 #lb-performance-title {
-  font-size: 100px;
+  font-size: 80px;
   color: #9D0000;
   text-align: left;
   margin-left: 30px;
@@ -847,7 +856,7 @@ a:visited {
 #lb-box-2{
   grid-column: 3/5;
   grid-row: 1;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 #lb-box-2 p{
@@ -872,7 +881,7 @@ a:visited {
 
 #lb-box-3{
   margin-left:30px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   grid-column: 3;
   grid-row:2;
   
@@ -883,7 +892,7 @@ a:visited {
 
 #lb-box-4{
   margin-left:30px;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   grid-column: 4;
   grid-row: 2;
  
@@ -895,14 +904,15 @@ a:visited {
 
 #lb-box-5{
   margin-left:30px;
-  margin-bottom: 50px;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
   grid-column:3 ;
   grid-row: 3;
 }
 
 #lb-box-6{
   margin-left:30px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   grid-column: 4;
   grid-row: 3;
 }

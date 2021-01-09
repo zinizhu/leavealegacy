@@ -12,6 +12,7 @@ var svg = d3
   .append('g')
   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
+
 // read data
 d3.csv('./files/lakers_champ.csv', data => {
   var years = []
@@ -93,20 +94,11 @@ d3.csv('./files/lakers_champ.csv', data => {
             })
         })
       }
+
+
     },
     offset: 700
   })
-
-  // new Waypoint({
-  //   element: document.getElementById('lakers-champ-timeline'),
-  //   handler: function (direction) {
-  //     console.log('here')
-  //     if (direction == 'down') {
-  //       document.getElementById('timeline-bg-circle').classList.add('timeline-bg-circle-expand')
-  //     }
-  //   },
-  //   offset: 400
-  // })
 
   d3.selectAll('.lakers-champ-axis path').attr('stroke', COLOR.LIGHT_GREY)
 
@@ -143,7 +135,7 @@ d3.csv('./files/lakers_champ.csv', data => {
       width: 140,
       text1: '1979–1991, Magic Johnson, Kareem',
       text2: 'Abdul-Jabba led the "Lakers',
-      text3: 'Showtime" and won 5 champs.'
+      text3: 'Showtime" and won 5 titles.'
     },
     {
       cx: x(1994),
