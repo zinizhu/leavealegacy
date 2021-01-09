@@ -88,7 +88,7 @@ body {
 
 .text-hide {
   opacity: 0.05;
-  transition: all 0s ease-in;
+  transition: all 50ms ease-in;
 }
 
 /* axis */
@@ -487,7 +487,7 @@ body {
 #playoffs-rounds {
   position: relative;
   width: 100%;
-  height: 600%;
+  height: 550%;
   overflow: hidden;
 
   background: #202125;

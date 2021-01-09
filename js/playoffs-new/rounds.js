@@ -333,6 +333,37 @@ for (var i = 0; i < 5; i++) {
   portland_parallelograms.push(path)
 }
 
+var portland_other_games = [1, 2]
+var portland_other_games_text = ['LAL 111 : 88 POR', 'LAL 116 : 108 POR']
+
+playoffsSvg
+  .selectAll('portland-other-games')
+  .data(portland_other_games)
+  .enter()
+  .append('text')
+  .attr('class', d => 'portland-other-game-' + d)
+  .attr('x', d => 350 + 110 * d + 45)
+  .attr('y', 110)
+  .attr('fill', COLOR.LAKERS_YELLOW)
+  .attr('font-size', 14)
+  .text((d, i) => portland_other_games_text[i])
+  .attr('text-anchor', 'middle')
+  .attr('display', 'none')
+
+playoffsSvg
+  .selectAll('portland-other-games')
+  .data(portland_other_games)
+  .enter()
+  .append('text')
+  .attr('class', d => 'portland-other-game-line-two-' + d)
+  .attr('x', d => 350 + 110 * d + 45)
+  .attr('y', 128)
+  .attr('fill', 'white')
+  .attr('font-size', 14)
+  .text((d, i) => 'Game ' + (d + 1))
+  .attr('text-anchor', 'middle')
+  .attr('display', 'none')
+
 playoffsSvg
   .selectAll('portland-parallelograms')
   .data(portland_parallelograms)
@@ -348,6 +379,24 @@ playoffsSvg
   .attr('fill', (d, i) => {
     if (i === 0) return COLOR.RED
     return COLOR.LAKERS_YELLOW
+  })
+  .on('mouseover', function (d, i) {
+    if (i === 1) {
+      d3.selectAll('.portland-other-game-1').attr('display', 'block')
+      d3.selectAll('.portland-other-game-line-two-1').attr('display', 'block')
+    } else if (i === 2) {
+      d3.selectAll('.portland-other-game-2').attr('display', 'block')
+      d3.selectAll('.portland-other-game-line-two-2').attr('display', 'block')
+    }
+  })
+  .on('mouseleave', function (d, i) {
+    if (i === 1) {
+      d3.selectAll('.portland-other-game-1').attr('display', 'none')
+      d3.selectAll('.portland-other-game-line-two-1').attr('display', 'none')
+    } else if (i === 2) {
+      d3.selectAll('.portland-other-game-2').attr('display', 'none')
+      d3.selectAll('.portland-other-game-line-two-2').attr('display', 'none')
+    }
   })
 
 var portland_games_idx = [0, 3, 4]
@@ -479,6 +528,38 @@ for (var i = 0; i < 5; i++) {
   houston_parallelograms.push(path)
 }
 
+
+var houston_other_games = [0, 2, 3]
+var houston_other_games_text = ['LAL 112 : 97 HOU', 'LAL 112 : 102 HOU', 'LAL 110 : 100 HOU',]
+
+playoffsSvg
+  .selectAll('houston-other-games')
+  .data(houston_other_games)
+  .enter()
+  .append('text')
+  .attr('class', d => 'houston-other-game-' + d)
+  .attr('x', d => 60 + 110 * d + 45)
+  .attr('y', 110 + 600)
+  .attr('fill', COLOR.LAKERS_YELLOW)
+  .attr('font-size', 14)
+  .text((d, i) => houston_other_games_text[i])
+  .attr('text-anchor', 'middle')
+  .attr('display', 'none')
+
+playoffsSvg
+  .selectAll('houston-other-games')
+  .data(houston_other_games)
+  .enter()
+  .append('text')
+  .attr('class', d => 'houston-other-game-line-two-' + d)
+  .attr('x', d => 60 + 110 * d + 45)
+  .attr('y', 128 + 600)
+  .attr('fill', 'white')
+  .attr('font-size', 14)
+  .text((d, i) => 'Game ' + (d + 1))
+  .attr('text-anchor', 'middle')
+  .attr('display', 'none')
+
 playoffsSvg
   .selectAll('houston-parallelograms')
   .data(houston_parallelograms)
@@ -494,6 +575,18 @@ playoffsSvg
   .attr('fill', (d, i) => {
     if (i === 0) return COLOR.RED
     return COLOR.LAKERS_YELLOW
+  })
+  .on('mouseover', function (d, i) {
+    if (i === 0 || i === 2 || i === 3) {
+      d3.selectAll('.houston-other-game-' + i).attr('display', 'block')
+      d3.selectAll('.houston-other-game-line-two-' + i).attr('display', 'block')
+    } 
+  })
+  .on('mouseleave', function (d, i) {
+    if (i === 0 || i === 2 || i === 3) {
+      d3.selectAll('.houston-other-game-' + i).attr('display', 'none')
+      d3.selectAll('.houston-other-game-line-two-' + i).attr('display', 'none')
+    } 
   })
 
 var houston_games_idx = [1, 4]
@@ -596,6 +689,37 @@ for (var i = 0; i < 5; i++) {
   denver_parallelograms.push(path)
 }
 
+var denver_other_games = [0, 2, 3]
+var denver_other_games_text = ['LAL 126 : 114 DEN', 'LAL 106 : 114 DEN', 'LAL 114 : 108 DEN',]
+
+playoffsSvg
+  .selectAll('denver-other-games')
+  .data(denver_other_games)
+  .enter()
+  .append('text')
+  .attr('class', d => 'denver-other-game-' + d)
+  .attr('x', d => 400 + 110 * d + 45)
+  .attr('y', 110 + 1200)
+  .attr('fill', COLOR.LAKERS_YELLOW)
+  .attr('font-size', 14)
+  .text((d, i) => denver_other_games_text[i])
+  .attr('text-anchor', 'middle')
+  .attr('display', 'none')
+
+playoffsSvg
+  .selectAll('denver-other-games')
+  .data(denver_other_games)
+  .enter()
+  .append('text')
+  .attr('class', d => 'denver-other-game-line-two-' + d)
+  .attr('x', d => 400 + 110 * d + 45)
+  .attr('y', 128 + 1200)
+  .attr('fill', 'white')
+  .attr('font-size', 14)
+  .text((d, i) => 'Game ' + (d + 1))
+  .attr('text-anchor', 'middle')
+  .attr('display', 'none')
+
 playoffsSvg
   .selectAll('denver-parallelograms')
   .data(denver_parallelograms)
@@ -611,6 +735,18 @@ playoffsSvg
   .attr('fill', (d, i) => {
     if (i === 1) return COLOR.BLUE
     return COLOR.LAKERS_YELLOW
+  })
+  .on('mouseover', function (d, i) {
+    if (i === 0 || i === 2 || i === 3) {
+      d3.selectAll('.denver-other-game-' + i).attr('display', 'block')
+      d3.selectAll('.denver-other-game-line-two-' + i).attr('display', 'block')
+    } 
+  })
+  .on('mouseleave', function (d, i) {
+    if (i === 0 || i === 2 || i === 3) {
+      d3.selectAll('.denver-other-game-' + i).attr('display', 'none')
+      d3.selectAll('.denver-other-game-line-two-' + i).attr('display', 'none')
+    } 
   })
 
 var denver_games_idx = [1, 4]
@@ -713,6 +849,39 @@ for (var i = 0; i < 6; i++) {
   miami_parallelograms.push(path)
 }
 
+
+var miami_other_games = [0, 1, 2]
+var miami_other_games_text = ['LAL 116 : 98 MIA', 'LAL 124 : 114 MIA', 'LAL 104 : 115 MIA',]
+
+playoffsSvg
+  .selectAll('miami-other-games')
+  .data(miami_other_games)
+  .enter()
+  .append('text')
+  .attr('class', d => 'miami-other-game-' + d)
+  .attr('x', d => 60 + 110 * d + 45)
+  .attr('y', 110 + 1800)
+  .attr('fill', COLOR.LAKERS_YELLOW)
+  .attr('font-size', 14)
+  .text((d, i) => miami_other_games_text[i])
+  .attr('text-anchor', 'middle')
+  .attr('display', 'none')
+
+playoffsSvg
+  .selectAll('miami-other-games')
+  .data(miami_other_games)
+  .enter()
+  .append('text')
+  .attr('class', d => 'miami-other-game-line-two-' + d)
+  .attr('x', d => 60 + 110 * d + 45)
+  .attr('y', 128 + 1800)
+  .attr('fill', 'white')
+  .attr('font-size', 14)
+  .text((d, i) => 'Game ' + (d + 1))
+  .attr('text-anchor', 'middle')
+  .attr('display', 'none')
+
+
 playoffsSvg
   .selectAll('miami-parallelograms')
   .data(miami_parallelograms)
@@ -726,8 +895,20 @@ playoffsSvg
       .y(d => d[1])
   )
   .attr('fill', (d, i) => {
-    if (i === 1 || i === 4) return COLOR.RED
+    if (i === 2 || i === 4) return COLOR.RED
     return COLOR.LAKERS_YELLOW
+  })
+  .on('mouseover', function (d, i) {
+    if (i === 0 || i === 1 || i === 2) {
+      d3.selectAll('.miami-other-game-' + i).attr('display', 'block')
+      d3.selectAll('.miami-other-game-line-two-' + i).attr('display', 'block')
+    } 
+  })
+  .on('mouseleave', function (d, i) {
+    if (i === 0 || i === 1 || i === 2) {
+      d3.selectAll('.miami-other-game-' + i).attr('display', 'none')
+      d3.selectAll('.miami-other-game-line-two-' + i).attr('display', 'none')
+    } 
   })
 
 var miami_games_idx = [3, 4, 5]
@@ -828,6 +1009,7 @@ var portland_text_line_one = [
   'LAL 135 : 115 POR',
   'LAL 131 : 122 POR'
 ]
+
 var portland_text_line_two = ['Game 1', 'Game 4', 'Game 5']
 var portland_text_blob = [
   'James became the first person to shoot 23 points, 17 rebounds and 16 assists in the playoffs. It was his 24th postseason triple-double and his assists were a career playoff high.',
@@ -1039,9 +1221,7 @@ var playoffs_history_height = 450
 
 var playoffs_timeline_svg = playoffsSvg
   .append('g')
-  .attr(
-    'transform',
-    'translate(125,2580)')
+  .attr('transform', 'translate(125,2580)')
 
 d3.csv('./files/lakers_champ.csv', data => {
   var years = []
@@ -1061,18 +1241,6 @@ d3.csv('./files/lakers_champ.csv', data => {
     .domain([1948, 2020])
     .range([0, 750])
 
-  var axis = svg
-    .append('g')
-    .attr('class', 'lakers-champ-axis')
-    .attr('transform', 'translate(0,' + 50 + ')')
-    .call(
-      d3
-        .axisBottom(x)
-        .tickSize(0)
-        .tickValues(years)
-        .tickFormat(d3.format('d'))
-    )
-
   playoffs_timeline_svg
     .append('g')
     .attr('class', 'playoffs-lakers-champ-axis')
@@ -1091,7 +1259,7 @@ d3.csv('./files/lakers_champ.csv', data => {
   )
 
   d3.selectAll('.playoffs-lakers-champ-axis .tick line')
-    .attr('class', (d) => {
+    .attr('class', d => {
       if (d === 2020) {
         return 'playoffs-axis-tick-line playoffs-axis-tick-line-2020'
       }
@@ -1109,12 +1277,12 @@ d3.csv('./files/lakers_champ.csv', data => {
     .attr('stroke', COLOR.LIGHT_GREY)
 
   d3.selectAll('.playoffs-lakers-champ-axis .tick text')
-  .attr('class', (d) => {
-    if (d === 2020) {
-      return 'playoffs-axis-tick-text playoffs-axis-tick-text-2020'
-    }
-    return 'playoffs-axis-tick-text'
-  })
+    .attr('class', d => {
+      if (d === 2020) {
+        return 'playoffs-axis-tick-text playoffs-axis-tick-text-2020'
+      }
+      return 'playoffs-axis-tick-text'
+    })
     .attr('y', (d, i) => {
       if (d === 2020) {
         return -20
@@ -1137,7 +1305,7 @@ d3.csv('./files/lakers_champ.csv', data => {
   ticks.each(function (tick, i) {
     d3.select(this)
       .append('circle')
-      .attr('class', (d) => {
+      .attr('class', d => {
         if (d === 2020) {
           return 'playoffs-axis-tick-circle playoffs-axis-tick-circle-2020'
         }
@@ -1169,37 +1337,37 @@ d3.csv('./files/lakers_champ.csv', data => {
     .append('image')
     .attr('class', 'playoffs-axis-tick-image')
     .attr('xlink:href', './files/images/champ-trophy.png')
-    .attr('x', x(2020))
+    .attr('x', x(2020) - 25)
     .attr('y', 150)
-    .attr('width', 40)
-    .attr('height', 50)
+    .attr('width', 50)
+    .attr('height', 60)
 
   new Waypoint({
-    element: document.getElementsByClassName("reference").item(0),
+    element: document.getElementsByClassName('reference').item(0),
     handler: function (direction) {
       console.log('here')
 
       d3.selectAll('.playoffs-axis-tick-line-2020')
-      .transition()
-      .duration(2000)
-      .attr('y2', -60)
+        .transition()
+        .duration(2000)
+        .attr('y2', -60)
 
       d3.selectAll('.playoffs-axis-tick-text-2020')
-      .transition()
-      .duration(2000)
-      .attr('y', -95)
-      .attr('display', 'block')
+        .transition()
+        .duration(2000)
+        .attr('y', -75)
+        .attr('display', 'block')
 
-      d3.selectAll('.playoffs-axis-tick-circle-2020')
-      .transition()
-      .duration(2000)
-      .attr('r', 16)
-      .attr('cy', -60)
+      // d3.selectAll('.playoffs-axis-tick-circle-2020')
+      //   .transition()
+      //   .duration(2000)
+      //   .attr('r', 16)
+      //   .attr('cy', -60)
 
       d3.selectAll('.playoffs-axis-tick-image')
-      .transition()
-      .duration(2000)
-      .attr('y', 80)
+        .transition()
+        .duration(2000)
+        .attr('y', 70)
     },
     offset: 1800
   })
