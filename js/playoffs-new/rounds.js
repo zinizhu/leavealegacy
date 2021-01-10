@@ -400,7 +400,7 @@ playoffsSvg
   })
 
 var portland_games_idx = [0, 3, 4]
-var portland_line_end = [130, 180, 350]
+var portland_line_end = [150, 130, 300]
 
 var portland_videos_links = [
   'https://www.youtube.com/embed/gHPubcpGkrk',

@@ -260,6 +260,21 @@ body {
   position: relative;
 }
 
+.draftWordGroup {
+  display: none;
+}
+
+.draftWordGroup div {
+  padding: 10px;
+  color: black;
+  font-size: 15px;
+  line-height: 150%;
+  text-align: left;
+  background-color: var(--LIGHT_GREY);
+  border: solid var(--LAKERS_YELLOW) 2px;
+  border-radius: 2px;
+}
+
 /* the New Team */
 #new-team {
   background-color: var(--BACKGROUND);

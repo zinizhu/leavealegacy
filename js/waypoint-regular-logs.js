@@ -96,7 +96,11 @@ for (var i = 0, length = pageElements.length; i < length; i++) {
       }
     },
     offset: function () {
-      return this.element.clientHeight * 0.4
+      var order = +this.element.getAttribute('order')
+      if (order === pageElements.length - 1) {
+        return this.element.clientHeight * 0.3  
+      }
+      return this.element.clientHeight * 0.3
 
     }
   })
