@@ -268,7 +268,8 @@ d3.csv('./files/lakers_game_logs.csv', data => {
   var yRange = d3
     .scaleLinear()
     .domain([0, 6])
-    .range([100, 400])
+    .range([300, 600])
+
   var xRange = d3
     .scaleLinear()
     .domain([0, 11])
@@ -436,7 +437,7 @@ d3.csv('./files/lakers_game_logs.csv', data => {
             .transition()
             .duration(500)
             .attr('cx', positionMap[i][0])
-            .attr('cy', positionMap[i][1])
+            .attr('cy', positionMap[i][1] + 70)
         }
       } else {
         for (var i = 0; i < stats.length; i++) {
