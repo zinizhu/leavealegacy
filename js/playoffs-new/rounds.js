@@ -285,7 +285,7 @@ playoffsSvg
 var endingTextGroup = playoffsSvg
   .append('g')
   .attr('class', 'endingWordGroup')
-  .attr('transform', 'translate(195,2910)')
+  .attr('transform', 'translate(195,2900)')
 
 var endingWordsText =
   'LeBron James got his fourth Finals MVP. AD won his first ring. The Lakers became the first team in league history to go undefeated when taking a lead into the fourth quarter, going 57-0 between the regular season and the playoffs. They were also the first franchise to earn the No. 1 seed following a five-year postseason absence.<br /><br />' +
@@ -302,18 +302,18 @@ endingTextGroupNode.call(endingTextWrap)
 playoffsSvg
   .append('line')
   .attr('x1', 200)
-  .attr('y1', 2900)
+  .attr('y1', 2898)
   .attr('x2', 800)
-  .attr('y2', 2900)
+  .attr('y2', 2898)
   .attr('stroke', 'white')
   .attr('stroke-width', 1)
 
 playoffsSvg
   .append('line')
   .attr('x1', 200)
-  .attr('y1', 3060)
+  .attr('y1', 3010)
   .attr('x2', 800)
-  .attr('y2', 3060)
+  .attr('y2', 3010)
   .attr('stroke', 'white')
   .attr('stroke-width', 1)
 
