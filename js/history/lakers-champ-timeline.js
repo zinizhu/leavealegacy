@@ -134,7 +134,7 @@ d3.csv('./files/lakers_champ.csv', data => {
       link: './files/images/champ-timeline/lakers-champ-showtime.jpg',
       width: 140,
       text1: '1979–1991, Magic Johnson, Kareem',
-      text2: 'Abdul-Jabba led the "Lakers',
+      text2: 'Abdul-Jabbar led the "Lakers',
       text3: 'Showtime" and won 5 titles.'
     },
     {
