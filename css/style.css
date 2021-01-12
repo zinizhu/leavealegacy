@@ -157,6 +157,11 @@ body {
   line-height: 140%;
 }
 
+.cover #title #title-notification {
+  font-size: 16px;
+  color: var(--LIGHT_GREY);
+}
+
 /* the giants */
 #the-giant {
   display: block;
