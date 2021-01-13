@@ -530,7 +530,7 @@ for (var i = 0; i < 5; i++) {
 
 
 var houston_other_games = [0, 2, 3]
-var houston_other_games_text = ['LAL 112 : 97 HOU', 'LAL 112 : 102 HOU', 'LAL 110 : 100 HOU',]
+var houston_other_games_text = ['LAL 97 : 112 HOU', 'LAL 112 : 102 HOU', 'LAL 110 : 100 HOU',]
 
 playoffsSvg
   .selectAll('houston-other-games')
@@ -733,7 +733,7 @@ playoffsSvg
       .y(d => d[1])
   )
   .attr('fill', (d, i) => {
-    if (i === 1) return COLOR.BLUE
+    if (i === 2) return COLOR.BLUE
     return COLOR.LAKERS_YELLOW
   })
   .on('mouseover', function (d, i) {
@@ -1012,9 +1012,9 @@ var portland_text_line_one = [
 
 var portland_text_line_two = ['Game 1', 'Game 4', 'Game 5']
 var portland_text_blob = [
-  'James became the first person to shoot 23 points, 17 rebounds and 16 assists in the playoffs. It was his 24th postseason triple-double and his assists were a career playoff high.',
-  'It was Kobe Bryant Day. James scored 30 points and 10 assists in 28 minutes and Lakers led by as many as 38 points for their third straight win in the opening-round series.',
-  'Anthony Davis had a playoff-best 43 points. He had a personal 11-0 run in the last quarter to put Los Angeles up 123-112 and all but seal the win.'
+  'James became the first person to shoot 23 points, 17 rebounds, and 16 assists in the playoffs. It was his 24th postseason triple-double and his assists were a career playoff high.',
+  'It was Kobe Bryant Day (8/24). James scored 30 points and 10 assists in 28 minutes and Lakers led by as many as 38 points for their third straight win in the opening-round series.',
+  'Anthony Davis had a playoff-best 43 points. He had a personal 11-0 run in the last quarter to put Los Angeles up 123-112.'
 ]
 
 for (var i = 0; i < portland_text_start.length; i++) {
@@ -1115,7 +1115,7 @@ var denver_text_line_one = ['LAL 105 : 103 DEN', 'LAL 117 : 107 DEN']
 var denver_text_line_two = ['Game 2', 'Game 5']
 var denver_text_blob = [
   'AD made “The Mamba Shot” and gave the Lakers a 105-103 victory over the Denver Nuggets on Sunday night and a 2-0 lead in the Western Conference finals.',
-  'James finished with 38 points, 16 rebounds and 10 assists, which was his 27th postseason triple-double, to become the fourth player to reach 10 NBA finals. He wore out the path to the NBA finals in Eastern Conference, and now he’s the best in the West.'
+  'James finished with 38 points, 16 rebounds, and 10 assists, which was his 27th postseason triple-double. He became only the fourth player ever to reach 10 NBA finals.'
 ]
 
 for (var i = 0; i < denver_text_start.length; i++) {
@@ -1168,8 +1168,8 @@ var miami_text_line_one = [
 ]
 var miami_text_line_two = ['Game 4', 'Game 5', 'Game 6']
 var miami_text_blob = [
-  "Anthony Davis' 3-pointer with 39.5s left finally settled matters and the Lakers beat Heat 102-96 in Game 4. 1 win away from the trophy.",
-  'James had 40 points, 13 rebounds and 7 assists for the Lakers.  They were 1 basket away from the title, but Green’s shot was a bit short.',
+  "Anthony Davis' 3-pointer with 39.5 seconds to go in the game settled matters and the Lakers beat Heat 102-96 in Game 4. They were now only 1 win away from the trophy.",
+  'James had 40 points, 13 rebounds and 7 assists for the Lakers. They were 1 basket away from the title, but Green’s shot was a bit short.',
   'No more drama. With a dominant final flourish, the Los Angeles Lakers won it all for the first time in a decade.'
 ]
 
