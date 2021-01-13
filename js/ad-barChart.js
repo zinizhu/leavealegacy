@@ -64,7 +64,7 @@ d3.csv('./files/ad.csv', function (data) {
   var ad_perf_titles = [
     'Anthony Davis Points Per Game 2013-2019',
     'Anthony Davis Rebounds Per Game 2013-2019',
-    'Anthony Davis Assits Per Game 2013-2019',
+    'Anthony Davis Assists Per Game 2013-2019',
     'Anthony Davis Blocks Per Game 2013-2019'
   ]
 
@@ -166,7 +166,7 @@ d3.csv('./files/ad.csv', function (data) {
         return ad_height - ad_perf_y[i](d[dimension])
       })
       .delay(function (d, j) {
-        return j * 100
+        return j * 200
       })
   }
 })

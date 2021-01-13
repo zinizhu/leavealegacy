@@ -220,7 +220,7 @@ d3.csv('./files/draft_picks.csv', data => {
       'Position: ' +
       draftPlayerTexts[i].position +
       '<br />' +
-      'Grad School: ' +
+      'School: ' +
       draftPlayerTexts[i].gradschool
       // + '<br />' +
       // 'Wiki Page: <a href=' +
