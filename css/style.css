@@ -541,8 +541,7 @@ body {
   background-color: var(--DARK_GREY);
   color: var(--REFERENCE_TITLE_COLOR);
   text-align: left;
-  padding-top: 150px;
-  padding-left: 200px;
+  padding: 200px;  
 }
 
 .reference h1 {
