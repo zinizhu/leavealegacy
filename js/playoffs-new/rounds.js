@@ -285,17 +285,17 @@ playoffsSvg
 var endingTextGroup = playoffsSvg
   .append('g')
   .attr('class', 'endingWordGroup')
-  .attr('transform', 'translate(195,2900)')
+  .attr('transform', 'translate(185,2900)')
 
 var endingWordsText =
-  'LeBron James got his fourth Finals MVP. AD won his first ring. The Lakers became the first team in league history to go undefeated when taking a lead into the fourth quarter, going 57-0 between the regular season and the playoffs. They were also the first franchise to earn the No. 1 seed following a five-year postseason absence.<br /><br />' +
-  'The franchise did it. And they will do it again next year.'
+  'LeBron James got his fourth Finals MVP. Anthony Davis won his first ring. The Lakers became the first team in league history to go undefeated when taking a lead into the fourth quarter; going 57-0 between the regular season and the playoffs. They were also the first franchise to earn the No. 1 seed following a five-year postseason absence.<br/><br />' +
+  'The franchise did it. And they will do it again next year!'
 
 var endingTextGroupNode = endingTextGroup.append('text').text(endingWordsText)
 
 var endingTextWrap = d3
   .textwrap()
-  .bounds({ width: 620, height: 400 })
+  .bounds({ width: 640, height: 400 })
   .padding(10)
 endingTextGroupNode.call(endingTextWrap)
 
