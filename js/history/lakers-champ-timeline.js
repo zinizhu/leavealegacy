@@ -111,9 +111,9 @@ d3.csv('./files/lakers_champ.csv', data => {
       y: -100,
       link: './files/images/champ-timeline/lakers-champ-gm.jpg',
       width: 100,
-      text1: '1947–1958, George Mikan ',
+      text1: '1947–1958 : George Mikan ',
       text2: 'dominated the league and  ',
-      text3: 'found Minneapolis dynasty.'
+      text3: 'founded the Minneapolis dynasty.'
     },
     {
       cx: x(1964),
@@ -122,8 +122,8 @@ d3.csv('./files/lakers_champ.csv', data => {
       y: 230,
       link: './files/images/champ-timeline/lakers-champ-wc.jpg',
       width: 120,
-      text1: '1968–1973, Wilt Chamberlain',
-      text2: 'joined Lakers and won only ',
+      text1: '1968–1973 : Wilt Chamberlain',
+      text2: 'joined the Lakers and won ',
       text3: 'one championship.'
     },
     {
@@ -133,9 +133,9 @@ d3.csv('./files/lakers_champ.csv', data => {
       y: -100,
       link: './files/images/champ-timeline/lakers-champ-showtime.jpg',
       width: 140,
-      text1: '1979–1991, Magic Johnson, Kareem',
-      text2: 'Abdul-Jabbar led the "Lakers',
-      text3: 'Showtime" and won 5 titles.'
+      text1: '1979–1991 : Magic Johnson, Kareem',
+      text2: 'Abdul-Jabbar led the "Showtime',
+      text3: 'Lakers" to 5 titles.'
     },
     {
       cx: x(1994),
@@ -144,7 +144,7 @@ d3.csv('./files/lakers_champ.csv', data => {
       y: 240,
       link: './files/images/champ-timeline/lakers-champ-ok.jpg',
       width: 120,
-      text1: '1996–2004, the best DUO - ',
+      text1: '1996–2004: The Best Duo - ',
       text2: "O'Neal and Bryant Dynasty",
       text3: 'with three rings.'
     },
@@ -155,9 +155,9 @@ d3.csv('./files/lakers_champ.csv', data => {
       y: -100,
       link: './files/images/champ-timeline/lakers-champ-kobe.jpg',
       width: 150,
-      text1: '2007-2011 Bryant and Casol built',
+      text1: '2007-2011: Bryant and Gasol built',
       text2: 'another dynasty after Shaq left',
-      text3: 'and they beat Celtics in the finals.'
+      text3: 'and won 2 more titles for Kobe.'
     }
   ]
 
