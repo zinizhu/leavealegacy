@@ -24,7 +24,7 @@ var playoffsSvg = d3
 
 var playoffs_circle_colors = [COLOR.RED, COLOR.RED, COLOR.BLUE, COLOR.RED]
 var playoffs_matchup = ['POR', 'HOU', 'DEN', 'MIA']
-var playoffs_score = ['4:1', '4:1', '4:2', '4:2']
+var playoffs_score = ['4:1', '4:1', '4:1', '4:2']
 
 for (var i = 0; i < 4; i++) {
   //  append intro circle
