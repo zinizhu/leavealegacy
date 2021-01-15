@@ -73,7 +73,7 @@ playoffsSvg
   .append('text')
   .attr('x', 350)
   .attr('y', 55)
-  .text('West Conference - 1st Round')
+  .text('Western Conference - 1st Round')
   .attr('fill', 'white')
   .attr('font-size', 28)
 
@@ -81,7 +81,7 @@ playoffsSvg
   .append('text')
   .attr('x', 60)
   .attr('y', 655)
-  .text('West Conference - Semi-finals')
+  .text('Western Conference - Semi-finals')
   .attr('fill', 'white')
   .attr('font-size', 28)
 
@@ -89,7 +89,7 @@ playoffsSvg
   .append('text')
   .attr('x', 400)
   .attr('y', 1255)
-  .text('West Conference - Finals')
+  .text('Western Conference - Finals')
   .attr('fill', 'white')
   .attr('font-size', 28)
 
