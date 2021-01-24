@@ -1,5 +1,5 @@
 // define margin and svg size
-var margin = { top: 200, bottom: 200, left: 150, right: 220 }
+var margin = { top: 100, bottom: 100, left: 150, right: 220 }
 var width = 1350
 var height = 450
 
@@ -7,8 +7,10 @@ var height = 450
 var svg = d3
   .select('#lakers-champ-timeline')
   .append('svg')
-  .attr('width', width + margin.left + margin.right)
-  .attr('height', height + margin.top + margin.bottom)
+  // .attr('width', width + margin.left + margin.right)
+  // .attr('height', height + margin.top + margin.bottom)
+  .attr("preserveAspectRatio", "xMinYMin meet")
+  .attr("viewBox", "-250 0 2250 820") 
   .append('g')
   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
