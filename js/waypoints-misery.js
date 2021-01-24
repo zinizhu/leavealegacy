@@ -25,7 +25,8 @@ new Waypoint({
 
       // miseryBgEl.style.visibility = 'hidden'
     }
-  }
+  },
+  offset: -100
 })
 
 new Waypoint({

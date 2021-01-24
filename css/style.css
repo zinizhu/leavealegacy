@@ -184,10 +184,6 @@ body {
   height: 100%;
 }
 
-/* #lakers-champ-timeline {
-  margin: 100px auto;
-} */
-
 /* transition */
 #transition-circle-svg {
   position: fixed;
@@ -254,7 +250,7 @@ body {
 
 .misery-graph-container {
   position: absolute;
-  margin-top: 100px;
+  margin-top: 350px;
   top: 0;
   margin-left: 45%;
   -webkit-transform: translate3d(0, 0, 0);
@@ -263,6 +259,7 @@ body {
 }
 
 .misery-graph-container.is-fixed {
+  top: 0;
   position: fixed;
 }
 
@@ -275,9 +272,31 @@ body {
   margin-bottom: 80%;
 }
 
-.misery-graph-container svg {
-  top: 300px;
+.misery-graph-container #misery-graph {
+  /* top: 150px; */
+  top: 0px;
+  width: 100%;
+  height: 100%;
   position: relative;
+  overflow: hidden;
+}
+
+.misery-graph-container #draft-graph {
+  /* top: 150px; */
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.misery-graph-container #record-graph {
+  /* top: 150px; */
+  top: 0px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .draftWordGroup {
@@ -294,6 +313,22 @@ body {
   border: solid var(--LAKERS_YELLOW) 2px;
   border-radius: 2px;
 }
+
+/* #misery-graph {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#misery-graph #kobe-injury-graph-svg {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
 
 /* the New Team */
 #new-team {
@@ -522,7 +557,9 @@ body {
 #playoffs-rounds {
   position: relative;
   width: 100%;
-  height: 550%;
+  height: 0;
+  padding-bottom: 320%;
+  /* height: 550%; */
   overflow: hidden;
   background: #202125;
 }
