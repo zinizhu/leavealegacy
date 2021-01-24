@@ -5,15 +5,14 @@ var scrollerOut = scrollama()
 var widthOffset = window.innerWidth / 2
 var heightOffset = window.innerHeight / 2
 
-d3
-  .select("#transition-circle-svg")
+d3.select('#transition-circle-svg')
   .append('g')
   .attr('x', window.innerWidth)
   .attr('y', window.innerHeight)
   .append('circle')
   .attr('class', 'timeline-bg-circle')
   .attr('id', 'timeline-bg-circle')
-  .attr('cx', window.outerWidth / 2)
+  .attr('cx', window.innerWidth / 2)
   .attr('cy', window.innerHeight / 2)
   .attr('r', 0)
   .attr('z-index', 100)
@@ -25,7 +24,6 @@ function handleStepProgress (response) {
 }
 
 function handleStepProgressOut (response) {
-
   var radius = window.innerWidth * (1 - response.progress)
   d3.select('#timeline-bg-circle').attr('r', radius)
   if (response.progress === 1) {
@@ -34,6 +32,16 @@ function handleStepProgressOut (response) {
     d3.select('#timeline-bg-circle').attr('display', 'block')
   }
 }
+
+// change center position on resize
+function onResizeWindow () {
+  console.log('resize')
+  console.log(window.innerWidth, window.innerHeight)
+  d3.select('#timeline-bg-circle')
+    .attr('cx', window.innerWidth / 2)
+    .attr('cy', window.innerHeight / 2)
+}
+window.addEventListener("resize", onResizeWindow);
 
 function init () {
   scrollerIn
@@ -44,7 +52,7 @@ function init () {
     })
     .onStepProgress(handleStepProgress)
 
-    scrollerOut
+  scrollerOut
     .setup({
       step: '#new-team-intro',
       progress: true,
@@ -54,17 +62,17 @@ function init () {
 }
 
 new Waypoint({
-  element: document.getElementById("new-team"),
+  element: document.getElementById('new-team'),
   handler: function (direction) {
     if (direction === 'down') {
       console.log('lalal')
-      document.getElementById("transition-circle-svg").style.position = 'relative';
+      document.getElementById('transition-circle-svg').style.position =
+        'relative'
     } else {
-      document.getElementById("transition-circle-svg").style.position = 'fixed';
+      document.getElementById('transition-circle-svg').style.position = 'fixed'
     }
   },
   offset: 0
 })
 
 init()
-
