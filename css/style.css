@@ -700,6 +700,7 @@ a:visited {
 /* other team player page */
 .wrapper-other-player{
   display: grid;
+  justify-content: center;
   margin: 50px 150px 50px 250px;
   grid-template-columns: 230px repeat(3, 420px) 230px;
   grid-template-rows: 150px repeat(4, 220px); 
@@ -814,6 +815,7 @@ a:visited {
 
 .ad-wrapper{
   display: grid;
+  justify-content: center;
   margin: 200px 150px 200px 250px;
   grid-template-columns: 180px 420px 420px 550px 130px;
   grid-template-rows: 320px 230px 300px; 
@@ -893,6 +895,7 @@ a:visited {
 /* LB section */
 .lb-wrapper{
   display: grid;
+  justify-content: center;
   margin: 200px 150px 200px 250px;
   grid-template-columns: 120px 630px 420px 420px 110px;
   grid-template-rows: 380px 230px 300px; 

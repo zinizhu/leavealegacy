@@ -43,8 +43,6 @@ d3.csv('./files/lebron.csv', function (data) {
     )
   }
 
-  // console.log(lb_perf_y)
-  // console.log(lb_perf_Stats)
 
   // create small multiples
   for (var j = 0; j < 4; j++) {
