@@ -234,7 +234,7 @@ body {
 
   padding: 6%;
   margin: auto;
-  margin-bottom: 100%;
+  margin-bottom: 120%;
   /* margin-top: 30%; */
 
   font-size: 30px;
@@ -251,7 +251,7 @@ body {
 .misery-graph-container {
   position: absolute;
   margin-top: 350px;
-  top: 0;
+  top: 100px;
   margin-left: 45%;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -291,7 +291,6 @@ body {
 }
 
 .misery-graph-container #record-graph {
-  /* top: 150px; */
   top: 0px;
   position: relative;
   width: 100%;
