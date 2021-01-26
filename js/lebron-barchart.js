@@ -69,7 +69,7 @@ d3.csv('./files/lebron.csv', function (data) {
   var lb_perf_titles = [
     'Lebron James Points Per Game 2003-2019',
     'Lebron James Rebounds Per Game 2003-2019',
-    'Lebron James Assits Per Game 2003-2019',
+    'Lebron James Assists Per Game 2003-2019',
     'Lebron James Blocks Per Game 2003-2019'
   ]
 
