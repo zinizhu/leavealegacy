@@ -2,7 +2,8 @@
 var lb_margin = { top: 40, bottom: 30, left: 60, right: 40 }
 var lb_width = 350
 var lb_height = 180
-var lb_colorName = ['#276bfd', '#fd2727', '#fdb927', '#2fa62b']
+// var lb_colorName = ['#276bfd', '#fd2727', '#fdb927', '#2fa62b']
+var lb_colorName = ['#552583', '#FDB927', '#FDB927', '#552583']
 
 // create stat
 d3.csv('./files/lebron.csv', function (data) {
@@ -29,7 +30,7 @@ d3.csv('./files/lebron.csv', function (data) {
     .scaleBand()
     .range([0, lb_width])
     .domain(seasons)
-    .padding(0.2)
+    .padding(0.45)
 
   //  create y Scales
   var lb_perf_y = []
@@ -67,10 +68,10 @@ d3.csv('./files/lebron.csv', function (data) {
   }
 
   var lb_perf_titles = [
-    'Lebron James Points Per Game 2003-2019',
-    'Lebron James Rebounds Per Game 2003-2019',
-    'Lebron James Assists Per Game 2003-2019',
-    'Lebron James Blocks Per Game 2003-2019'
+    'Points Per Game (PTS)',
+    'Rebounds Per Game (REB)',
+    'Assists Per Game (AST)',
+    'Blocks Per Game (BLK)'
   ]
 
   for (var i = 0; i < 4; i++) {
@@ -98,6 +99,7 @@ d3.csv('./files/lebron.csv', function (data) {
       .attr('x', 0)
       .attr('y', -15)
       .text(lb_perf_titles[i])
+      .attr('font-size', 18)
 
     d3.selectAll('.lb-perf-' + dimension + '-g')
       .append('text')
@@ -128,10 +130,11 @@ d3.csv('./files/lebron.csv', function (data) {
       .attr('dimension', dimension)
       .attr('color', lb_colorName[i])
       .on('mouseover', function (d, c) {
+        console.log(d, c, i)
         var di = d3.select(this).attr('dimension')
         d3.selectAll('.lb-perf-' + di + '-' + c)
         .attr('display', 'block')
-        d3.select(this).attr('fill', COLOR.LAKERS_PURPLE)
+        d3.select(this).attr('fill', COLOR.BLUE)
       })
       .on('mouseleave', function (d, c) {
         var di = d3.select(this).attr('dimension')

@@ -1,5 +1,5 @@
 // define margin and svg size
-var margin = { top: 100, bottom: 100, left: 150, right: 220 }
+var margin = { top: 180, bottom: 100, left: 150, right: 220 }
 var width = 1350
 var height = 450
 
@@ -103,6 +103,14 @@ d3.csv('./files/lakers_champ.csv', data => {
   })
 
   d3.selectAll('.lakers-champ-axis path').attr('stroke', COLOR.LIGHT_GREY)
+
+  // add title
+  svg.append('text')
+  .attr('x', width / 2)
+  .attr('y', -150)
+  .attr('text-anchor', 'middle')
+  .attr('font-size', 32)
+  .text('Years That Lakers Won the NBA Championship')
 
   // add image
   var champRecordsStories = [

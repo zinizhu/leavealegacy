@@ -96,8 +96,6 @@ d3.csv('./files/kobe_stats.csv', data => {
         .tickSize(-kobe_injury_width)
     )
 
-
-      
     // highlight 2013
     const kobe_injury_season_dashed_points = [
       [x(5), kobe_injury_height / 6],
@@ -113,6 +111,40 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('stroke-width', 1.5)
     .attr('fill', 'none')
     .style('stroke-dasharray', '12, 5')
+
+    const annotations = [
+      {
+        note: {
+          label: '',
+          align: 'left'
+        },
+        connector: {
+          end: "arrow"
+        },
+        x: x(5),
+        y: 75,
+        dy: -20,
+        dx: 50,
+        color: COLOR.LIGHT_GREY
+      }
+    ]
+
+    const makeAnnotations = d3
+      .annotation()
+      .type(d3.annotationLabel)
+      .annotations([annotations[0]])
+
+    kobe_injury_svg
+      .append('g')
+      .attr('class', 'annotation-' + i)
+      .call(makeAnnotations)
+
+    kobe_injury_svg.append("text")
+    .attr("x", x(5) + 55)
+    .attr("y", 50)
+    .text("Kobe's first injury")
+    .attr("fill", COLOR.LIGHT_GREY)
+    .attr("font-size", 20)
   
 
   // append PTS lines and circles
@@ -120,7 +152,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .append('path')
     .datum(stats)
     .attr('fill', 'none')
-    .attr('stroke', COLOR.BLUE)
+    .attr('stroke', COLOR.LIGHT_BLUE)
     .attr('stroke-width', 2)
     .attr(
       'd',
@@ -138,7 +170,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('cx', (d, i) => x(i))
     .attr('cy', d => yPTS(d.PTS))
     .attr('r', 4)
-    .attr('fill', COLOR.BLUE)
+    .attr('fill', COLOR.LIGHT_BLUE)
     .on('mouseover', (d, i) => {
       d3.selectAll('.kobe-injury-PTS-text-' + i).attr('display', 'block')
     })
@@ -152,7 +184,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .append('path')
     .datum(stats)
     .attr('fill', 'none')
-    .attr('stroke', COLOR.RED)
+    .attr('stroke', COLOR.LAKERS_YELLOW)
     .attr('stroke-width', 2)
     .attr(
       'd',
@@ -170,7 +202,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('cx', (d, i) => x(i))
     .attr('cy', d => yFG(d['FG%']))
     .attr('r', 4)
-    .attr('fill', COLOR.RED)
+    .attr('fill', COLOR.LAKERS_YELLOW)
     .on('mouseover', (d, i) => {
       d3.selectAll('.kobe-injury-FG-text-' + i).attr('display', 'block')
     })
@@ -232,54 +264,20 @@ d3.csv('./files/kobe_stats.csv', data => {
   kobe_injury_svg
     .append('text')
     .attr('transform', 'rotate(-90)')
-    .attr('x', -kobe_injury_height / 2 - 20)
-    .attr('y', -35)
-    .text('PTS')
-    .attr('font-size', '24px')
-    .attr('fill', COLOR.LIGHT_GREY)
+    .attr('x', -kobe_injury_height / 2 - 90)
+    .attr('y', -45)
+    .text('Points Per Game (PTS)')
+    .attr('font-size', '20px')
+    .attr('fill', COLOR.LIGHT_BLUE)
 
   kobe_injury_svg
     .append('text')
     .attr('transform', 'rotate(90)')
-    .attr('x', 1.03 * (kobe_injury_height / 2 - 38))
+    .attr('x', 1.03 * (kobe_injury_height / 2 - 150))
     .attr('y', 1.03 * (-kobe_injury_width - 40))
-    .text('FG%')
-    .attr('font-size', '24px')
-    .attr('fill', COLOR.LIGHT_GREY)
-
-  kobe_injury_svg
-    .append('circle')
-    .attr('cx', kobe_injury_width / 2 - 150)
-    .attr('cy', kobe_injury_height + 95)
-    // .attr('cy', -25)
-    .attr('r', 6)
-    .attr('fill', COLOR.BLUE)
-
-  kobe_injury_svg
-    .append('text')
-    .attr('x', kobe_injury_width / 2 - 130)
-    // .attr('y', -17)
-    .attr('y', kobe_injury_height + 105)
-    .text('PTS')
-    .attr('font-size', '24px')
-    .attr('fill', COLOR.LIGHT_GREY)
-
-  kobe_injury_svg
-    .append('circle')
-    .attr('cx', kobe_injury_width / 2 + 100)
-    .attr('cy', kobe_injury_height + 95)
-    // .attr('cy', -25)
-    .attr('r', 6)
-    .attr('fill', COLOR.RED)
-
-  kobe_injury_svg
-    .append('text')
-    .attr('x', kobe_injury_width / 2 + 120)
-    .attr('y', kobe_injury_height + 105)
-    // .attr('y', -17)
-    .text('FG%')
-    .attr('font-size', '22px')
-    .attr('fill', COLOR.LIGHT_GREY)
+    .text('Field Goal Percentage (FG%)')
+    .attr('font-size', '20px')
+    .attr('fill', COLOR.LAKERS_YELLOW)
 
   // title
   kobe_injury_svg
@@ -295,10 +293,10 @@ d3.csv('./files/kobe_stats.csv', data => {
   kobe_injury_svg
     .append('text')
     .attr('x', x(5) - 15)
-    .attr('y', yPTS(stats[5].PTS) + 45)
+    .attr('y', yPTS(stats[5].PTS) + 50)
     .text('Torn Achilles tendon')
-    .attr('font-size', '21px')
-    .attr('fill', COLOR.LAKERS_YELLOW)
+    .attr('font-size', '20px')
+    .attr('fill', COLOR.LIGHT_RED)
     .attr('text-anchor', 'middle')
 
   kobe_injury_svg
@@ -306,8 +304,8 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('x', x(6))
     .attr('y', yPTS(stats[6].PTS) - 15)
     .text('Tibial plateau fracture')
-    .attr('font-size', '21px')
-    .attr('fill', COLOR.LAKERS_YELLOW)
+    .attr('font-size', '20px')
+    .attr('fill', COLOR.LIGHT_RED)
     .attr('text-anchor', 'middle')
 
   kobe_injury_svg
@@ -315,7 +313,7 @@ d3.csv('./files/kobe_stats.csv', data => {
     .attr('x', x(7) - 40)
     .attr('y', yPTS(stats[7].PTS) + 30)
     .text('Torn shoulder rotator cuff')
-    .attr('font-size', '21px')
-    .attr('fill', COLOR.LAKERS_YELLOW)
+    .attr('font-size', '20px')
+    .attr('fill', COLOR.LIGHT_RED)
     .attr('text-anchor', 'middle')
 })

@@ -1,7 +1,8 @@
 var ad_margin = { top: 45, right: 40, bottom: 60, left: 40 }
 var ad_width = 300
 var ad_height = 180
-var ad_colorName = ['#276bfd', '#fd2727', '#fdb927', '#2fa62b']
+// var ad_colorName = ['#276bfd', '#fd2727', '#fdb927', '#2fa62b']
+var ad_colorName = ['#552583', '#FDB927', '#FDB927', '#552583']
 
 d3.csv('./files/ad.csv', function (data) {
   //console.log(data) // check the input data format in the browser console
@@ -25,7 +26,7 @@ d3.csv('./files/ad.csv', function (data) {
     .scaleBand()
     .range([0, ad_width])
     .domain(seasons)
-    .padding(0.1)
+    .padding(0.45)
 
   //  create y Scales
   var ad_perf_y = []
@@ -62,10 +63,10 @@ d3.csv('./files/ad.csv', function (data) {
   }
 
   var ad_perf_titles = [
-    'Anthony Davis Points Per Game 2013-2019',
-    'Anthony Davis Rebounds Per Game 2013-2019',
-    'Anthony Davis Assists Per Game 2013-2019',
-    'Anthony Davis Blocks Per Game 2013-2019'
+    'Points Per Game (PTS) 2013-2019',
+    'Rebounds Per Game (REB) 2013-2019',
+    'Assists Per Game (AST) 2013-2019',
+    'Blocks Per Game (BLK) 2013-2019'
   ]
 
   for (var i = 0; i < 4; i++) {
@@ -100,6 +101,7 @@ d3.csv('./files/ad.csv', function (data) {
       .attr('y', ad_height + 48)
       .text('Season')
       .attr('text-anchor', 'middle')
+      .attr('font-size', 18)
 
     d3.selectAll('.ad-perf-' + dimension + '-g')
       .selectAll('rect-' + dimension)
@@ -125,7 +127,7 @@ d3.csv('./files/ad.csv', function (data) {
         var di = d3.select(this).attr('dimension')
         d3.selectAll('.ad-perf-' + di + '-' + c)
         .attr('display', 'block')
-        d3.select(this).attr('fill', COLOR.LAKERS_PURPLE)
+        d3.select(this).attr('fill', COLOR.BLUE)
       })
       .on('mouseleave', function (d, c) {
         var di = d3.select(this).attr('dimension')
